@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c81urirwrs5ca"]
+
+[ext_resource type="PackedScene" uid="uid://4agr42px48nm" path="res://johannesNurTesting/Character.tscn" id="1_kxhqt"]
+[ext_resource type="PackedScene" uid="uid://c2nnobckl08ih" path="res://johannesNurTesting/JohannesTestLevel.tscn" id="2_wag02"]
+
+[node name="Node2D" type="Node2D" unique_id=1869615372]
+
+[node name="Character" parent="." unique_id=1601456253 instance=ExtResource("1_kxhqt")]
+position = Vector2(0, -139)
+
+[node name="RapierRigidBody2D2" parent="." unique_id=2062381924 instance=ExtResource("2_wag02")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=667866501]

@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://4agr42px48nm"]
+
+[ext_resource type="Script" uid="uid://dxnd7rf1i041v" path="res://johannesNurTesting/Character.gd" id="1_ym8rp"]
+[ext_resource type="Script" uid="uid://cgm1ldgdif6yq" path="res://johannesNurTesting/ActiveRagdoll.gd" id="3_nw7kw"]
+
+[sub_resource type="Animation" id="Animation_ym8rp"]
+resource_name = "MoveL"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("B_Root/B_Leg1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.8726646259971648, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_nw7kw"]
+resource_name = "MoveR"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("B_Root/B_Leg1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.8726646259971648, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_qmprm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("B_Root/B_Leg1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nw7kw"]
+_data = {
+&"MoveL": SubResource("Animation_ym8rp"),
+&"MoveR": SubResource("Animation_nw7kw"),
+&"RESET": SubResource("Animation_qmprm")
+}
+
+[node name="Character" type="Node2D" unique_id=1601456253]
+script = ExtResource("1_ym8rp")
+
+[node name="ActiveRagdoll" type="Node2D" parent="." unique_id=1482862755]
+script = ExtResource("3_nw7kw")
+
+[node name="Skeleton2D" type="Skeleton2D" parent="ActiveRagdoll" unique_id=635585110]
+unique_name_in_owner = true
+
+[node name="B_Root" type="Bone2D" parent="ActiveRagdoll/Skeleton2D" unique_id=92481493]
+rest = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="B_Torso" type="Bone2D" parent="ActiveRagdoll/Skeleton2D/B_Root" unique_id=540594886]
+position = Vector2(0, -39)
+rest = Transform2D(1, 0, 0, 1, 0, -39)
+
+[node name="B_Leg1" type="Bone2D" parent="ActiveRagdoll/Skeleton2D/B_Root" unique_id=386855052]
+position = Vector2(0, 22)
+rest = Transform2D(1, 0, 0, 1, 0, 22)
+
+[node name="B_Leg2" type="Bone2D" parent="ActiveRagdoll/Skeleton2D/B_Root/B_Leg1" unique_id=1797197553]
+position = Vector2(0, 41)
+rest = Transform2D(1, 0, 0, 1, 0, 41)
+
+[node name="B_Leg3" type="Bone2D" parent="ActiveRagdoll/Skeleton2D/B_Root/B_Leg1/B_Leg2" unique_id=1472586078]
+position = Vector2(0, 50)
+rest = Transform2D(1, 0, 0, 1, 0, 50)
+
+[node name="B_Foot" type="Bone2D" parent="ActiveRagdoll/Skeleton2D/B_Root/B_Leg1/B_Leg2/B_Leg3" unique_id=1208198399]
+position = Vector2(28, 0)
+rest = Transform2D(1, 0, 0, 1, 28, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2022292459]
+unique_name_in_owner = true
+root_node = NodePath("../ActiveRagdoll/Skeleton2D")
+libraries/ = SubResource("AnimationLibrary_nw7kw")
