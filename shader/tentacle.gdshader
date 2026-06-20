@@ -5,7 +5,6 @@ uniform float frequency : hint_range(0.0, 20.0) = 6.0;
 uniform float speed : hint_range(0.0, 10.0) = 2.0;
 
 void vertex() {
-    // 1 at root, 0 at tip
     float tip_factor = UV.y;
 
     // Smooth falloff so the base stays still
