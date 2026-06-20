@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bf4r0rkqe3shj"]
+
+[ext_resource type="Script" uid="uid://b3qpc1mx3gffj" path="res://src/water_meter.gd" id="1_g71af"]
+[ext_resource type="Texture2D" uid="uid://d618h2mg4ycb" path="res://assets/wetness_meter.png" id="1_uyagr"]
+[ext_resource type="Shader" uid="uid://c731elxfl4hbg" path="res://shader/wetness_meter.gdshader" id="2_g71af"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayuib"]
+atlas = ExtResource("1_uyagr")
+region = Rect2(241, 93, 114, 715)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ytp43"]
+shader = ExtResource("2_g71af")
+shader_parameter/depletion_pct = 0.43100000000000005
+shader_parameter/color = Color(0, 0.20392157, 0.7647059, 1)
+shader_parameter/bg_wave_color = Color(0.07774512, 0.2225078, 0.40453395, 1)
+shader_parameter/wave_amplitude = 0.0090000004275
+shader_parameter/wave_frequency = 2.43600011571
+shader_parameter/wave_scroll_speed = 4.590000218025
+shader_parameter/bg_wave_offset = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vb6l7"]
+atlas = ExtResource("1_uyagr")
+region = Rect2(18, 25, 194, 789)
+
+[node name="WaterMeter" type="Node2D" unique_id=1715216701]
+script = ExtResource("1_g71af")
+fill_pct = 0.569
+
+[node name="Background" type="Sprite2D" parent="." unique_id=618731818]
+position = Vector2(0, 31)
+texture = SubResource("AtlasTexture_ayuib")
+
+[node name="Meter" type="Sprite2D" parent="Background" unique_id=1412788413]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_ytp43")
+texture = SubResource("AtlasTexture_ayuib")
+
+[node name="Forground" type="Sprite2D" parent="." unique_id=1539856530]
+texture = SubResource("AtlasTexture_vb6l7")
