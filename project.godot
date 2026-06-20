@@ -17,6 +17,8 @@ config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -25,6 +27,13 @@ window/stretch/aspect="expand"
 folder_colors={
 "res://johannesNurTesting/": "red"
 }
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Moses"
+2d_physics/layer_3="Floor"
+2d_physics/layer_4="WeaponHitbox"
 
 [physics]
 

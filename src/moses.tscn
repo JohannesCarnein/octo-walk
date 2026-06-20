@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://0iygbixdavxw"]
+
+[ext_resource type="Texture2D" uid="uid://v3yjcy5ycl0x" path="res://icon.svg" id="1_3h4om"]
+[ext_resource type="Script" uid="uid://3bnb3x1xnpa3" path="res://src/moses_controller.gd" id="1_ck8v8"]
+[ext_resource type="Texture2D" uid="uid://b2avd4l6iv6d0" path="res://assets/sprites/wave-spritesheet.png" id="3_bxtlg"]
+[ext_resource type="AudioStream" uid="uid://wju6sabtpxxq" path="res://assets/sounds/sea_wall/Sea Wall Comp Louder-To Loop.ogg" id="4_6pkik"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxtlg"]
+atlas = ExtResource("3_bxtlg")
+region = Rect2(8, 0, 859, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pkik"]
+atlas = ExtResource("3_bxtlg")
+region = Rect2(867, 0, 859, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyx3r"]
+atlas = ExtResource("3_bxtlg")
+region = Rect2(1726, 0, 859, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vb6l7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxtlg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pkik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyx3r")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vb6l7"]
+size = Vector2(133, 303)
+
+[node name="Moses" type="Node2D" unique_id=2060770436]
+script = ExtResource("1_ck8v8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=354250747]
+position = Vector2(437.99997, -283)
+scale = Vector2(1.2922015, 1.2922015)
+sprite_frames = SubResource("SpriteFrames_vb6l7")
+autoplay = "default"
+frame_progress = 0.15649946
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=672403685]
+scale = Vector2(0.42256233, 1.7318972)
+texture = ExtResource("1_3h4om")
+
+[node name="PlayerDetector" type="Area2D" parent="." unique_id=530174089]
+unique_name_in_owner = true
+position = Vector2(-210, 0)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector" unique_id=1560795383]
+position = Vector2(-416, 0)
+shape = SubResource("RectangleShape2D_vb6l7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1940879767]
+position = Vector2(493, -118)
+stream = ExtResource("4_6pkik")
+autoplay = true
+max_distance = 4096.0
+attenuation = 1.4142141

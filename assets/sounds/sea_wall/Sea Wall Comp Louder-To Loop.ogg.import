@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://wju6sabtpxxq"
+path="res://.godot/imported/Sea Wall Comp Louder-To Loop.ogg-959ea3a3e68f3fb01a985620064fb471.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sounds/sea_wall/Sea Wall Comp Louder-To Loop.ogg"
+dest_files=["res://.godot/imported/Sea Wall Comp Louder-To Loop.ogg-959ea3a3e68f3fb01a985620064fb471.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

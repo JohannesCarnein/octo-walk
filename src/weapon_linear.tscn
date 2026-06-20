@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://d2otmjno8y78b"]
+
+[ext_resource type="Script" uid="uid://bmtovl4s6v0a3" path="res://src/weapon_linear.gd" id="1_tw67v"]
+[ext_resource type="Texture2D" uid="uid://bdpmtp2gsaslo" path="res://assets/sprites/weapons-spritesheet.png" id="2_6n73m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vb6l7"]
+radius = 64.86
+
+[node name="WeaponLinear" type="Node2D" unique_id=1908830325 node_paths=PackedStringArray("_variations")]
+script = ExtResource("1_tw67v")
+_variations = [NodePath("Variation1"), NodePath("Variation2"), NodePath("Variation3"), NodePath("Variation4")]
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1451330496]
+unique_name_in_owner = true
+collision_layer = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1694007876]
+position = Vector2(-10, 64)
+shape = SubResource("CircleShape2D_vb6l7")
+
+[node name="Variation1" type="Sprite2D" parent="." unique_id=1048943521]
+visible = false
+position = Vector2(0, 299)
+texture = ExtResource("2_6n73m")
+region_enabled = true
+region_rect = Rect2(0, 1, 148, 598)
+
+[node name="Variation2" type="Sprite2D" parent="." unique_id=1951865283]
+visible = false
+position = Vector2(0, 299)
+texture = ExtResource("2_6n73m")
+region_enabled = true
+region_rect = Rect2(153, 0, 145, 601)
+
+[node name="Variation3" type="Sprite2D" parent="." unique_id=165806708]
+visible = false
+position = Vector2(0, 299)
+texture = ExtResource("2_6n73m")
+region_enabled = true
+region_rect = Rect2(371, 6, 169, 593)
+
+[node name="Variation4" type="Sprite2D" parent="." unique_id=957533978]
+visible = false
+position = Vector2(-11, 570)
+texture = ExtResource("2_6n73m")
+region_enabled = true
+region_rect = Rect2(668, 24, 165, 1145)

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cslhcncxkff7c"]
+
+[ext_resource type="PackedScene" uid="uid://08ygld83vt76" path="res://src/stages/stage1.tscn" id="1_k3sfh"]
+[ext_resource type="Texture2D" uid="uid://f18hm5qdokxs" path="res://assets/sprites/earth-obstacles-spritesheet.png" id="2_b55l6"]
+
+[node name="Stage2" unique_id=708795216 instance=ExtResource("1_k3sfh")]
+
+[node name="Obstacles" type="Node2D" parent="." index="0" unique_id=2054147802]
+
+[node name="Sprite2D3" type="Sprite2D" parent="Obstacles" index="0" unique_id=2084977528]
+position = Vector2(-99, -246)
+texture = ExtResource("2_b55l6")
+region_enabled = true
+region_rect = Rect2(10, 165, 496, 235)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Obstacles/Sprite2D3" index="0" unique_id=444857311]
+collision_layer = 4
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Sprite2D3/StaticBody2D" index="0" unique_id=1195949791]
+polygon = PackedVector2Array(-138, -20, -181, 8, -206, 62, -242, 114, 246, 114, 125, -71, 91, -114, 63, -119, 29, -102, 13, -63, -20, 13, -49, 46, -78, 40, -99, -4)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacles" index="1" unique_id=996621985]
+position = Vector2(499, -200)
+texture = ExtResource("2_b55l6")
+region_enabled = true
+region_rect = Rect2(1206, 263, 378, 137)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Obstacles/Sprite2D" index="0" unique_id=967490829]
+collision_layer = 4
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Sprite2D/StaticBody2D2" index="0" unique_id=351783187]
+polygon = PackedVector2Array(-121, -59, -127, -21, -157, 21, -196, 72, 195, 69, 187, 37, 166, 3, 135, -14, 94, -13, 65, 7, 8, -30, -40, -50, -77, -72, -105, -70)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Obstacles" index="2" unique_id=390941205]
+position = Vector2(1248, -245)
+texture = ExtResource("2_b55l6")
+region_enabled = true
+region_rect = Rect2(2, 558, 796, 242)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Obstacles/Sprite2D2" index="0" unique_id=1568614450]
+collision_layer = 4
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Sprite2D2/StaticBody2D3" index="0" unique_id=1651200689]
+polygon = PackedVector2Array(-405, 115, -374, 84, -342, 59, -245, -9, -217, -20, -181, -18, -55, 47, 9, -12, 40, -56, 88, -110, 119, -125, 162, -125, 272, -55, 338, 19, 383, 68, 401, 114)
+metadata/_edit_lock_ = true
