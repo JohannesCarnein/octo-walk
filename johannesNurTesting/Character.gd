@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 		_time_under_tension -= delta * 3
 	var center_of_mass: Vector2 = %ActiveRagdoll.get_center_of_mass()
 	var skeleton_pos: Vector2 = %SkeletonHolder.global_position
-	var character_move: Vector2 = lerp(skeleton_pos, center_of_mass + Vector2.UP * 100 * jump_boost, clamp(5 * delta, 0, 1))
+	var character_move: Vector2 = lerp(skeleton_pos, center_of_mass + Vector2.UP * 100 * jump_boost, clamp(0.5 * delta, 0, 1))
 	%SkeletonHolder.global_position = character_move + (jump_boost - 1) * Vector2(10,5)
 	if cam:
 		cam.global_position = center_of_mass

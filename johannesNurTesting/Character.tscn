@@ -147,6 +147,7 @@ position = Vector2(10, 46)
 scale = Vector2(0.99970895, 0.99970895)
 rest = Transform2D(1, 0, 0, 1, 0, 22)
 script = ExtResource("3_ym8rp")
+layer = 2
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 metadata/_local_pose_override_enabled_ = true
 
@@ -157,8 +158,8 @@ rotation = -0.00028013464
 scale = Vector2(1.0003452, 1.0003452)
 rest = Transform2D(1, 0, 0, 1, 0, 41)
 script = ExtResource("3_ym8rp")
+layer = 2
 position_stiffness = 0.0
-position_damping = 0.5
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 metadata/_local_pose_override_enabled_ = true
 
@@ -168,6 +169,7 @@ position = Vector2(0, 46)
 rest = Transform2D(1, 0, 0, 1, 0, 50)
 script = ExtResource("3_ym8rp")
 mass = 0.2
+layer = 2
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 metadata/_local_pose_override_enabled_ = true
 
@@ -180,7 +182,12 @@ length = 30.0
 bone_angle = 0.0
 script = ExtResource("3_ym8rp")
 shape_override = SubResource("CircleShape2D_nw7kw")
+layer = 2
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
+
+[node name="FootLTarget" type="Node2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root/B_Leg1L/B_kneeL" unique_id=1714987126]
+position = Vector2(0, 183)
+script = ExtResource("4_nw7kw")
 
 [node name="B_Leg1R" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root" unique_id=740194004]
 unique_name_in_owner = true
@@ -189,6 +196,7 @@ rotation = 0.021254627
 scale = Vector2(0.9998481, 0.9998481)
 rest = Transform2D(1, 0, 0, 1, 0, 22)
 script = ExtResource("3_ym8rp")
+layer = 3
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 metadata/_local_pose_override_enabled_ = true
 
@@ -199,8 +207,8 @@ rotation = -0.00029069587
 scale = Vector2(1.0003452, 1.0003452)
 rest = Transform2D(1, 0, 0, 1, 0, 41)
 script = ExtResource("3_ym8rp")
+layer = 3
 position_stiffness = 0.0
-position_damping = 0.5
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 metadata/_local_pose_override_enabled_ = true
 
@@ -211,6 +219,7 @@ scale = Vector2(0.99999547, 0.99999547)
 rest = Transform2D(1, 0, 0, 1, 0, 50)
 script = ExtResource("3_ym8rp")
 mass = 0.2
+layer = 3
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 metadata/_local_pose_override_enabled_ = true
 
@@ -223,6 +232,7 @@ length = 30.0
 bone_angle = 180.0
 script = ExtResource("3_ym8rp")
 shape_override = SubResource("CircleShape2D_nw7kw")
+layer = 3
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 
 [node name="StepTargets" type="Node2D" parent="ActiveRagdoll/SkeletonHolder" unique_id=1994465088]

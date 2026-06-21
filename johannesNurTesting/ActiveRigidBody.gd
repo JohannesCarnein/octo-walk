@@ -43,6 +43,8 @@ func _init(b: MetaBone, skel: Skeleton2D) -> void:
 	col.shape = b.get_shape()
 	collisionShape = col
 	mass = b.mass
+	set_collision_layer_value(1, false)
+	set_collision_layer_value(b.layer, true)
 	
 	
 

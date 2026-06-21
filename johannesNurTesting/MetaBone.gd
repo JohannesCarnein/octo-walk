@@ -3,12 +3,14 @@ extends Bone2D
 
 @export var shape_override: Shape2D
 @export var rotation_stiffness: float = 90000.0
-@export var rotation_damping: float = 70.0
+@export var rotation_damping: float = 200.0
 @export var stiffness_mult: float = 1
 @export var mass: float = 0.3
 
+@export var layer: int = 1
+
 @export var position_stiffness: float = 0.5
-@export var position_damping: float = 1.0
+@export var position_damping: float = 2.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
