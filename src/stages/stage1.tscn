@@ -20,6 +20,7 @@ region_rect = Rect2(0, 809.98413, 1440, 270.01587)
 metadata/_edit_lock_ = true
 
 [node name="MosesMarker" type="Marker2D" parent="." unique_id=1588096256]
+unique_name_in_owner = true
 position = Vector2(2002, -231)
 
 [node name="CheckPoint" type="Marker2D" parent="." unique_id=600598034]
