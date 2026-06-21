@@ -86,7 +86,7 @@ func jump() -> void:
 	if !jump_tween1:
 		jump_tween1 = create_tween()
 		jump_tween1.tween_property(%StepTargets, "position", Vector2(-200, 200), 0.1)
-		jump_tween1.tween_property(%StepTargets, "position", Vector2.ZERO, 0.2)
+		jump_tween1.tween_property(%StepTargets, "position", Vector2.ZERO, 0.4)
 		%ActiveRagdoll.bone_to_body[%B_FootL].apply_impulse(Vector2(200, -400))
 		%ActiveRagdoll.bone_to_body[%B_FootR].apply_impulse(Vector2(200, -400))
 		%ActiveRagdoll.bone_to_body[%B_kneeL].apply_impulse(Vector2(500, -400))

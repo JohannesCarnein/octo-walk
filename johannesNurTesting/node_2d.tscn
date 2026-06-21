@@ -5,9 +5,9 @@
 
 [node name="Node2D" type="Node2D" unique_id=1869615372]
 
-[node name="Character" parent="." unique_id=1601456253 node_paths=PackedStringArray("cam") instance=ExtResource("1_kxhqt")]
+[node name="Character" parent="." unique_id=1601456253 node_paths=PackedStringArray("follower") instance=ExtResource("1_kxhqt")]
 position = Vector2(0, -197)
-cam = NodePath("../Camera2D")
+follower = NodePath("../Camera2D")
 
 [node name="RapierRigidBody2D2" parent="." unique_id=2062381924 instance=ExtResource("2_wag02")]
 
