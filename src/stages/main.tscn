@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="18_yc0iw"]
 [ext_resource type="Texture2D" uid="uid://bftiv1ao5aevu" path="res://assets/sprites/droplets.png" id="20_7agxh"]
 [ext_resource type="Script" uid="uid://bm6o00qa2dm3v" path="res://src/stages/water_particles.gd" id="21_ec3j1"]
+[ext_resource type="Texture2D" uid="uid://bxms0d8ultprg" path="res://assets/sprites/controls.png" id="23_kje8p"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vb6l7"]
 
@@ -197,6 +198,7 @@ draw_limits = true
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Player/Follower" unique_id=148617376]
+position = Vector2(0, -56.84)
 emitting = false
 texture = ExtResource("20_7agxh")
 one_shot = true
@@ -208,6 +210,15 @@ initial_velocity_max = 221.23
 scale_amount_min = 0.3
 scale_amount_max = 0.5
 script = ExtResource("21_ec3j1")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1689058006]
+offset_left = 458.0
+offset_top = -529.0
+offset_right = 1030.0
+offset_bottom = -26.0
+texture = ExtResource("23_kje8p")
+expand_mode = 3
+stretch_mode = 4
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=2125004753]
 

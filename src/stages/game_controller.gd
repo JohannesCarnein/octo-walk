@@ -31,7 +31,6 @@ func _on_moses_detected_player() -> void:
 		_start_stage(stages.pop_front())
 
 func _start_stage(stage: StageController) -> void:
-	print("next stage")
 	if is_instance_valid(_current_stage):
 		_current_stage.stop()
 		# stop all input
@@ -46,6 +45,7 @@ func _start_stage(stage: StageController) -> void:
 		moses_camera.priority = 0
 		# player.process_mode = Node.PROCESS_MODE_INHERIT
 		# player.set_physics_process(true)
+		EventBus.refill_water.emit()
 	else:
 		moses.global_position.x = stage.get_global_moses_position_x()
 	_current_stage = stage

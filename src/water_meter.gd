@@ -13,13 +13,16 @@ func _ready() -> void:
 		return
 	fill_pct = 1.0
 	EventBus.splash_water.connect(_on_splash_water)
+	EventBus.refill_water.connect(_on_refill_water)
 
+func _on_refill_water() -> void:
+	fill_pct = 1.0
 
 func _on_splash_water(a_lot: bool) -> void:
 	if a_lot:
-		fill_pct -= 0.03
-	else:
 		fill_pct -= 0.01
+	else:
+		fill_pct -= 0.005
 
 func set_fill(value: float) -> void:
 	fill_pct = clampf(value, 0.0, 1.0)
