@@ -18,11 +18,11 @@ func _ready() -> void:
 
 	get_parent().add_child(restpose_marker)
 	restpose_marker.global_position = pos
-	queue_redraw()
+	#queue_redraw()
 	
-func _draw():
-	if restpose_marker != null:
-		draw_circle(to_local(restpose_marker.global_position), 10, Color.PURPLE)
+#func _draw():
+#	if restpose_marker != null:
+#		draw_circle(to_local(restpose_marker.global_position), 10, Color.PURPLE)
 
 func _physics_process(delta: float) -> void:
 	var strength: float = 500 * delta

@@ -2,7 +2,7 @@ class_name Character
 extends Node2D
 
 @export var min_strength: float = 1
-@export var max_strength: float = 3
+@export var max_strength: float = 4
 @export var move_speed: float = 800
 @export var time_till_max_strength: float = 8
 
@@ -24,11 +24,11 @@ var _time_under_tension: float = 0:
 func _ready() -> void:
 	pass
 	
-func _process(delta: float) -> void:
-	queue_redraw()
+#func _process(delta: float) -> void:
+#	queue_redraw()
 	
-func _draw() -> void:
-	draw_line(Vector2(100, 0), Vector2(100, get_mapped_tut() * -200), lerp(Color.GREEN_YELLOW, Color.CRIMSON, get_mapped_tut()))
+#func _draw() -> void:
+#	draw_line(Vector2(100, 0), Vector2(100, get_mapped_tut() * -200), lerp(Color.GREEN_YELLOW, Color.CRIMSON, get_mapped_tut()))
 
 func _physics_process(delta: float) -> void:
 	var moved: bool = false

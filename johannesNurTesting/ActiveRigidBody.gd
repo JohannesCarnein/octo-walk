@@ -33,13 +33,13 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	for i in range(contact_count):
 		var impulse = state.get_contact_impulse(i)
 		var impact_strength = impulse.length()
-		if impact_strength > 300.0:
+		if impact_strength > 200.0:
 			impact_vfx.impact(impact_strength, impulse.angle())
 			emit_signal("on_impact", impact_strength)
 
 func _init(b: MetaBone, skel: Skeleton2D) -> void:
 	contact_monitor = true
-	max_contacts_reported = 2
+	max_contacts_reported = 1
 	bone = b
 	name = bone.name
 	rotation_stiffness = b.get_rotation_stiffness()
@@ -82,8 +82,8 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	_follow_bone()
 
-func _process(delta: float) -> void:
-	queue_redraw()	
+#func _process(delta: float) -> void:
+#	queue_redraw()	
 
 	
 func get_damping_mult() -> float:
@@ -92,8 +92,8 @@ func get_damping_mult() -> float:
 func get_stiffness_mult() -> float:
 	return clamp(remap(angular_velocity, 0, 20, _mas, _mis), _mis, _mas)
 	
-func _draw():
-	debug_draw_target()
+#func _draw():
+#	debug_draw_target()
 	#draw_set_transform(to_local(bone.global_position), -global_rotation, Vector2.ONE)
 	#draw_string(ThemeDB.fallback_font, Vector2.ZERO, str(snapped(get_damping_mult(), 0.1)))
 
