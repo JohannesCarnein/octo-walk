@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bf4r0rkqe3shj"]
 
 [ext_resource type="Script" uid="uid://b3qpc1mx3gffj" path="res://src/water_meter.gd" id="1_g71af"]
-[ext_resource type="Texture2D" uid="uid://d618h2mg4ycb" path="res://assets/wetness_meter.png" id="1_uyagr"]
+[ext_resource type="Texture2D" uid="uid://d618h2mg4ycb" path="res://assets/sprites/wetness_meter.png" id="1_uyagr"]
 [ext_resource type="Shader" uid="uid://c731elxfl4hbg" path="res://shader/wetness_meter.gdshader" id="2_g71af"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ayuib"]

@@ -20,9 +20,9 @@ func _on_refill_water() -> void:
 
 func _on_splash_water(a_lot: bool) -> void:
 	if a_lot:
-		fill_pct -= 0.01
+		fill_pct -= 0.03
 	else:
-		fill_pct -= 0.005
+		fill_pct -= 0.01
 
 func set_fill(value: float) -> void:
 	fill_pct = clampf(value, 0.0, 1.0)
