@@ -76,7 +76,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"run",
-"speed": 10.0
+"speed": 14.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -92,14 +92,14 @@ size = Vector2(133, 1387)
 
 [node name="Moses" type="Node2D" unique_id=2060770436]
 script = ExtResource("1_ck8v8")
-run_duration = 8.0
+run_duration = 7.0
 
 [node name="AnimatedMoses" type="AnimatedSprite2D" parent="." unique_id=1339918020]
 unique_name_in_owner = true
+scale = Vector2(0.7972258, 0.7972258)
 sprite_frames = SubResource("SpriteFrames_ytp43")
-animation = &"run"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.3205096
 
 [node name="PlayerDetector" type="Area2D" parent="." unique_id=530174089]
 unique_name_in_owner = true
