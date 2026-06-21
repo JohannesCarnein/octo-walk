@@ -36,19 +36,15 @@ func _physics_process(delta: float) -> void:
 	if Input.is_key_pressed(KEY_Q):
 		Lstep_left(strength)
 		moved = true
-		audio_steps.play()
 	if Input.is_key_pressed(KEY_W):
 		Lstep_right(strength)
 		moved = true
-		audio_steps.play()
 	if Input.is_key_pressed(KEY_O):
 		Rstep_left(strength)
 		moved = true
-		audio_steps.play()
 	if Input.is_key_pressed(KEY_P):
 		Rstep_right(strength)
 		moved = true
-		audio_steps.play()
 	prevent_inverted_knee(delta * 0.2)
 	if moved:
 		_time_under_tension += delta
@@ -78,6 +74,9 @@ func prevent_inverted_knee(strength: float) -> void:
 	
 func _input(event):
 	if event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode in [KEY_W, KEY_Q, KEY_O, KEY_P]:
+			audio_steps.play()
+			EventBus.splash_water.emit(false)
 		if event.keycode == KEY_Q:
 			play_anim("MoveL")
 		if event.keycode == KEY_W:
@@ -85,6 +84,7 @@ func _input(event):
 		if event.keycode == KEY_SPACE:
 			jump()
 			audio_steps.play()
+			EventBus.splash_water.emit(true)
 
 func jump() -> void:
 	if !jump_tween1:

@@ -465,6 +465,7 @@ libraries/ = SubResource("AnimationLibrary_nw7kw")
 [node name="AudioStreamSteps" type="AudioStreamPlayer" parent="." unique_id=833225236]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_2d1mq")
+max_polyphony = 4
 
 [node name="AudioStreamArmor" type="AudioStreamPlayer" parent="." unique_id=1287359116]
 unique_name_in_owner = true

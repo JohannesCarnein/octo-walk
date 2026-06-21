@@ -20,6 +20,8 @@
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="17_c0fna"]
 [ext_resource type="Script" uid="uid://fu4xdxw1mutp" path="res://src/player_area.gd" id="18_c0fna"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="18_yc0iw"]
+[ext_resource type="Texture2D" uid="uid://bftiv1ao5aevu" path="res://assets/sprites/droplets.png" id="20_7agxh"]
+[ext_resource type="Script" uid="uid://bm6o00qa2dm3v" path="res://src/stages/water_particles.gd" id="21_ec3j1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vb6l7"]
 
@@ -193,6 +195,19 @@ follow_offset = Vector2(430, -75)
 follow_axis_lock = 2
 draw_limits = true
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Player/Follower" unique_id=148617376]
+emitting = false
+texture = ExtResource("20_7agxh")
+one_shot = true
+explosiveness = 0.72
+direction = Vector2(0, -1)
+spread = 57.74
+initial_velocity_min = 123.89
+initial_velocity_max = 221.23
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+script = ExtResource("21_ec3j1")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=2125004753]
 
