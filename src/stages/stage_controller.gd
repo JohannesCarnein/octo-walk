@@ -9,7 +9,7 @@ func start() -> void:
 func stop() -> void:
 	pass
 
-func initialize(_player: PlayerController) -> void:
+func initialize(_player: Character) -> void:
 	pass
 
 func get_global_moses_position_x() -> float:

@@ -1,7 +1,7 @@
 class_name GameController
 extends Node2D
 
-@onready var player: PlayerController = %Player
+@onready var player: Character = %Player
 @onready var moses: MosesController = %Moses
 
 @onready var moses_camera: PhantomCamera2D = %CameraMoses
@@ -30,18 +30,18 @@ func _start_stage(stage: StageController) -> void:
 	print("next stage")
 	if is_instance_valid(_current_stage):
 		_current_stage.stop()
+		# stop all input
+		# player.process_mode = Node.PROCESS_MODE_DISABLED
+		# player.set_physics_process(false) # TODO does not work
 		# shift camera to moses
 		moses_camera.priority = 10
 		await get_tree().create_timer(2.0).timeout
-		# stop all input
-		player.process_mode = Node.PROCESS_MODE_DISABLED
-		player.set_physics_process(false)
 		# make moses run away while following him
 		await moses.run_to(stage.get_global_moses_position_x())
 		# resume with camera and enable input
 		moses_camera.priority = 0
-		player.process_mode = Node.PROCESS_MODE_INHERIT
-		player.set_physics_process(true)
+		# player.process_mode = Node.PROCESS_MODE_INHERIT
+		# player.set_physics_process(true)
 	else:
 		moses.global_position.x = stage.get_global_moses_position_x()
 	_current_stage = stage

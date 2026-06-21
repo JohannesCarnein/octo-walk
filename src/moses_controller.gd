@@ -9,10 +9,10 @@ signal player_detected
 @onready var _player_detector: Area2D = %PlayerDetector
 
 func _ready() -> void:
-	_player_detector.body_entered.connect(_on_body_entered)
+	_player_detector.area_entered.connect(_on_area_entered)
 
-func _on_body_entered(body: Node2D) -> void:
-	if body is PlayerController:
+func _on_area_entered(area: Area2D) -> void:
+	if area is PlayerArea:
 		player_detected.emit()
 		_animation.play("turn_around")
 
