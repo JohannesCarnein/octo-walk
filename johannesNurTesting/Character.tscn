@@ -34,7 +34,7 @@ joint_data/0/bone_index = 1
 joint_data/0/bone2d_node = NodePath("B_Root/B_Leg1L")
 joint_data/0/rotate_from_joint = false
 joint_data/0/enable_constraint = true
-joint_data/0/constraint_angle_min = -203.99992
+joint_data/0/constraint_angle_min = -203.99991
 joint_data/0/constraint_angle_max = 207.99992
 joint_data/0/constraint_angle_invert = true
 joint_data/0/constraint_in_localspace = true
@@ -52,8 +52,8 @@ joint_data/2/bone_index = 3
 joint_data/2/bone2d_node = NodePath("B_Root/B_Leg1L/B_kneeL/B_Leg2L")
 joint_data/2/rotate_from_joint = false
 joint_data/2/enable_constraint = true
-joint_data/2/constraint_angle_min = -194.65092
-joint_data/2/constraint_angle_max = 194.65092
+joint_data/2/constraint_angle_min = -194.65091
+joint_data/2/constraint_angle_max = 194.65091
 joint_data/2/constraint_angle_invert = true
 joint_data/2/constraint_in_localspace = true
 joint_data/2/editor_draw_gizmo = true
@@ -220,6 +220,7 @@ uv = PackedVector2Array(158.89636, 216.79636, 161.79965, 288.8947, 217.44604, 29
 bones = ["B_Root", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1), "B_Root/B_Leg1L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L/B_FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R/B_FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="Chest" type="Polygon2D" parent="ActiveRagdoll/CharacterMeshHolder/Torso" unique_id=1729508249]
+z_index = 1
 position = Vector2(324, 285)
 texture = ExtResource("5_y4thy")
 skeleton = NodePath("../../../SkeletonHolder/Skeleton2D")
@@ -289,15 +290,6 @@ polygon = PackedVector2Array(296.41205, 655.5475, 295.6173, 689.72076, 299.59094
 uv = PackedVector2Array(296.41205, 655.5475, 295.6173, 689.72076, 299.59094, 719.9204, 294.02783, 759.65686, 307.5382, 793.0354, 336.94318, 800.188, 354.4272, 788.267, 353.63245, 773.16724, 367.93756, 758.8621, 369.52704, 715.1521, 379.85846, 688.926, 384.62683, 654.75275, 352.04297, 649.18964)
 bones = ["B_Root", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "B_Root/B_Leg1L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L/B_FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R/B_FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
-[node name="GloveL" type="Polygon2D" parent="ActiveRagdoll/CharacterMeshHolder" unique_id=2025846277]
-position = Vector2(-260.47314, -179.10628)
-scale = Vector2(0.45054623, 0.45054623)
-texture = ExtResource("5_y4thy")
-skeleton = NodePath("../../SkeletonHolder/Skeleton2D")
-polygon = PackedVector2Array(658.16516, 498.29578, 656.04956, 534.2604, 666.6274, 556.4739, 676.14746, 578.68726, 675.08966, 607.24744, 686.7253, 619.9408, 696.2453, 638.98096, 720.57434, 635.80756, 737.49884, 610.4208, 744.9033, 571.28284, 737.49884, 541.66486, 745.9611, 526.8559, 736.4411, 494.06464, 697.3031, 494.06464)
-uv = PackedVector2Array(658.16516, 498.29578, 656.04956, 534.2604, 666.6274, 556.4739, 676.14746, 578.68726, 675.08966, 607.24744, 686.7253, 619.9408, 696.2453, 638.98096, 720.57434, 635.80756, 737.49884, 610.4208, 744.9033, 571.28284, 737.49884, 541.66486, 745.9611, 526.8559, 736.4411, 494.06464, 697.3031, 494.06464)
-bones = ["B_Root", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "B_Root/B_Leg1L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L/B_FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R/B_FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
-
 [node name="ArmL" type="Polygon2D" parent="ActiveRagdoll/CharacterMeshHolder" unique_id=1604879947]
 position = Vector2(-258.47314, -135.10626)
 scale = Vector2(0.45054623, 0.45054623)
@@ -306,6 +298,15 @@ skeleton = NodePath("../../SkeletonHolder/Skeleton2D")
 polygon = PackedVector2Array(614.40436, 198.58334, 623.8974, 243.67508, 646.44324, 266.22098, 642.88336, 300.6331, 639.3235, 336.23184, 654.74963, 357.5911, 659.49615, 401.49622, 668.98914, 444.21472, 693.90826, 472.6937, 731, 451, 727, 413, 736.6268, 365.89746, 733.0669, 335.0452, 739, 288.76685, 729.507, 242.48846, 727.1337, 205.7031, 701.028, 174.85083, 658.3095, 149.93172, 620.3375, 167.7311)
 uv = PackedVector2Array(614.40436, 198.58334, 623.8974, 243.67508, 646.44324, 266.22098, 642.88336, 300.6331, 639.3235, 336.23184, 654.74963, 357.5911, 659.49615, 401.49622, 668.98914, 444.21472, 693.90826, 472.6937, 734.2535, 454.89435, 786.465, 466.7606, 827.9969, 475.06696, 868.3421, 478.62683, 906.31415, 477.44022, 911.0606, 453.7077, 861.22235, 433.5351, 822.0638, 420.4822, 775.7854, 407.42932, 734.2535, 400.30957, 736.6268, 365.89746, 733.0669, 335.0452, 739, 288.76685, 729.507, 242.48846, 727.1337, 205.7031, 701.028, 174.85083, 658.3095, 149.93172, 620.3375, 167.7311)
 bones = ["B_Root", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "B_Root/B_Leg1L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L/B_FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R/B_FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="GloveL" type="Polygon2D" parent="ActiveRagdoll/CharacterMeshHolder" unique_id=2025846277]
+position = Vector2(-260.47314, -179.10628)
+scale = Vector2(0.45054623, 0.45054623)
+texture = ExtResource("5_y4thy")
+skeleton = NodePath("../../SkeletonHolder/Skeleton2D")
+polygon = PackedVector2Array(658.16516, 498.29578, 656.04956, 534.2604, 666.6274, 556.4739, 676.14746, 578.68726, 675.08966, 607.24744, 686.7253, 619.9408, 696.2453, 638.98096, 720.57434, 635.80756, 737.49884, 610.4208, 744.9033, 571.28284, 737.49884, 541.66486, 745.9611, 526.8559, 736.4411, 494.06464, 697.3031, 494.06464)
+uv = PackedVector2Array(658.16516, 498.29578, 656.04956, 534.2604, 666.6274, 556.4739, 676.14746, 578.68726, 675.08966, 607.24744, 686.7253, 619.9408, 696.2453, 638.98096, 720.57434, 635.80756, 737.49884, 610.4208, 744.9033, 571.28284, 737.49884, 541.66486, 745.9611, 526.8559, 736.4411, 494.06464, 697.3031, 494.06464)
+bones = ["B_Root", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "B_Root/B_Leg1L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L/B_FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R/B_FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="SkeletonHolder" type="Node2D" parent="ActiveRagdoll" unique_id=1141828985]
 unique_name_in_owner = true
@@ -339,7 +340,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="B_kneeL" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root/B_Leg1L" unique_id=195879404]
 unique_name_in_owner = true
 position = Vector2(2.8088639, 40.959663)
-rotation = -0.00028013476
+rotation = -0.0002801348
 scale = Vector2(1.0003452, 1.0003452)
 rest = Transform2D(1.0003965, -0.014268167, 0.014268167, 1.0003965, 2.8104992, 40.97078)
 script = ExtResource("3_ym8rp")
@@ -392,7 +393,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="B_kneeR" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root/B_Leg1R" unique_id=265606411]
 unique_name_in_owner = true
 position = Vector2(2.8088613, 40.959637)
-rotation = -0.00029069599
+rotation = -0.000290696
 scale = Vector2(1.0003452, 1.0003452)
 rest = Transform2D(0.99985874, -0.0155891795, 0.0155891795, 0.99985874, 2.8112507, 40.967438)
 script = ExtResource("3_ym8rp")

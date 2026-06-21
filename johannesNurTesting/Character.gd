@@ -77,14 +77,16 @@ func _input(event):
 		if event.keycode in [KEY_W, KEY_Q, KEY_O, KEY_P]:
 			audio_steps.play()
 			EventBus.splash_water.emit(false)
-		if event.keycode == KEY_Q:
-			play_anim("MoveL")
-		if event.keycode == KEY_W:
-			play_anim("MoveR")
 		if event.keycode == KEY_SPACE:
 			jump()
 			audio_steps.play()
 			EventBus.splash_water.emit(true)
+	if not OS.has_feature("editor"):
+		return
+	
+	global_position += 100.0 * Vector2(
+		Input.get_axis("ui_left", "ui_right"),
+		Input.get_axis("ui_up", "ui_down"))
 
 func jump() -> void:
 	if !jump_tween1:
