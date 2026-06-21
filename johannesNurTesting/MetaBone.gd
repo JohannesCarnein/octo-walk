@@ -3,7 +3,7 @@ extends Bone2D
 
 @export var shape_override: Shape2D
 @export var rotation_stiffness: float = 100000.0
-@export var rotation_damping: float = 60.0
+@export var rotation_damping: float = 120.0
 @export var stiffness_mult: float = 1
 @export var mass: float = 1
 
@@ -12,9 +12,9 @@ extends Bone2D
 @export var layer: int = 1
 
 @export var position_stiffness: float = 3
-@export var position_damping: float = 4.0
+@export var position_damping: float = 3.0
 
-@export var should_draw: bool = false
+@export var should_draw: bool = true
 
 @export var override_target_rot: Vector2
 @export var angula_limit_lower: float

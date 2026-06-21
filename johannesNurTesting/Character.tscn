@@ -34,8 +34,8 @@ joint_data/0/bone_index = 1
 joint_data/0/bone2d_node = NodePath("B_Root/B_Leg1L")
 joint_data/0/rotate_from_joint = false
 joint_data/0/enable_constraint = true
-joint_data/0/constraint_angle_min = -203.99995
-joint_data/0/constraint_angle_max = 207.99995
+joint_data/0/constraint_angle_min = -203.99994
+joint_data/0/constraint_angle_max = 207.99994
 joint_data/0/constraint_angle_invert = true
 joint_data/0/constraint_in_localspace = true
 joint_data/0/editor_draw_gizmo = true
@@ -52,8 +52,8 @@ joint_data/2/bone_index = 3
 joint_data/2/bone2d_node = NodePath("B_Root/B_Leg1L/B_kneeL/B_Leg2L")
 joint_data/2/rotate_from_joint = false
 joint_data/2/enable_constraint = true
-joint_data/2/constraint_angle_min = -194.65096
-joint_data/2/constraint_angle_max = 194.65096
+joint_data/2/constraint_angle_min = -194.65094
+joint_data/2/constraint_angle_max = 194.65094
 joint_data/2/constraint_angle_invert = true
 joint_data/2/constraint_in_localspace = true
 joint_data/2/editor_draw_gizmo = true
@@ -85,16 +85,18 @@ modifications/0 = SubResource("SkeletonModification2DCCDIK_anga4")
 modifications/1 = SubResource("SkeletonModification2DCCDIK_nw7kw")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pa2y2"]
+size = Vector2(25, 25)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pa2y2"]
 radius = 8.0
-height = 45.0
+height = 60.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6vf32"]
+size = Vector2(25, 25)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4kxsw"]
 radius = 8.0
-height = 45.0
+height = 60.0
 
 [sub_resource type="Animation" id="Animation_ym8rp"]
 resource_name = "MoveL"
@@ -329,18 +331,18 @@ position = Vector2(17, 46)
 scale = Vector2(0.99967897, 0.99967897)
 rest = Transform2D(0.99921477, 0.030475797, -0.030475797, 0.99921477, 17, 46)
 script = ExtResource("3_ym8rp")
-layer = 2
+layer = 5
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 metadata/_local_pose_override_enabled_ = true
 
 [node name="B_kneeL" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root/B_Leg1L" unique_id=195879404]
 unique_name_in_owner = true
 position = Vector2(2.8088639, 40.959663)
-rotation = -0.0002801347
+rotation = -0.00028013473
 scale = Vector2(1.0003452, 1.0003452)
 rest = Transform2D(1.0003965, -0.014268167, 0.014268167, 1.0003965, 2.8104992, 40.97078)
 script = ExtResource("3_ym8rp")
-layer = 2
+layer = 5
 position_stiffness = 4.0
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 metadata/_local_pose_override_enabled_ = true
@@ -352,7 +354,7 @@ rest = Transform2D(0.99986035, 2.9768795e-05, -2.9768795e-05, 0.99986035, -0.000
 script = ExtResource("3_ym8rp")
 shape_override = SubResource("RectangleShape2D_pa2y2")
 mass = 0.2
-layer = 2
+layer = 5
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 metadata/_local_pose_override_enabled_ = true
 
@@ -368,7 +370,7 @@ shape_override = SubResource("CapsuleShape2D_pa2y2")
 rotation_stiffness = 12000.0
 rotation_damping = 200.0
 constant_force = Vector2(20, 0)
-layer = 2
+layer = 5
 position_stiffness = 4.0
 position_damping = 2.0
 angula_limit_lower = 150.0
@@ -382,18 +384,18 @@ rotation = 0.032650333
 scale = Vector2(0.99994403, 0.99994403)
 rest = Transform2D(0.99944514, 0.031448055, -0.031448055, 0.99944514, -17, 47)
 script = ExtResource("3_ym8rp")
-layer = 3
+layer = 6
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 metadata/_local_pose_override_enabled_ = true
 
 [node name="B_kneeR" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root/B_Leg1R" unique_id=265606411]
 unique_name_in_owner = true
 position = Vector2(2.8088613, 40.959637)
-rotation = -0.00029069593
+rotation = -0.00029069596
 scale = Vector2(1.0003452, 1.0003452)
 rest = Transform2D(0.99985874, -0.0155891795, 0.0155891795, 0.99985874, 2.8112507, 40.967438)
 script = ExtResource("3_ym8rp")
-layer = 3
+layer = 6
 position_stiffness = 4.0
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 metadata/_local_pose_override_enabled_ = true
@@ -406,7 +408,7 @@ rest = Transform2D(0.9997838, -2.1204352e-05, 2.1204352e-05, 0.9997838, 0.000243
 script = ExtResource("3_ym8rp")
 shape_override = SubResource("RectangleShape2D_6vf32")
 mass = 0.2
-layer = 3
+layer = 6
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 metadata/_local_pose_override_enabled_ = true
 
@@ -422,7 +424,7 @@ shape_override = SubResource("CapsuleShape2D_4kxsw")
 rotation_stiffness = 12000.0
 rotation_damping = 200.0
 constant_force = Vector2(20, 0)
-layer = 3
+layer = 6
 position_stiffness = 4.0
 position_damping = 2.0
 angula_limit_lower = 150.0

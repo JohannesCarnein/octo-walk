@@ -33,7 +33,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	for i in range(contact_count):
 		var impulse = state.get_contact_impulse(i)
 		var impact_strength = impulse.length()
-		if impact_strength > 100.0:
+		if impact_strength > 300.0:
 			impact_vfx.impact(impact_strength, impulse.angle())
 			emit_signal("on_impact", impact_strength)
 
@@ -52,6 +52,8 @@ func _init(b: MetaBone, skel: Skeleton2D) -> void:
 	mass = b.mass
 	set_collision_layer_value(1, false)
 	set_collision_layer_value(b.layer, true)
+	set_collision_mask_value(1, true)
+	set_collision_mask_value(3, true)
 	remote_transform = RemoteTransform2D.new()
 	constant_force_bonus = b.constant_force
 	if b.override_target_rot:

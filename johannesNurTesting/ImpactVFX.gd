@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 	pass
 
 func impact(strength: float = 1, angle: float = 0, arc: float = PI, speed: float = 0.1, col: Color = Color.SKY_BLUE) -> void:
-	var fac:float = remap(strength, 500, 2000, 0, 1)
+	var fac:float = remap(strength, 10, 800, 0, 1)
 	one_shot = true
 	scale_amount_min = fac * 3
 	color = Color.from_hsv(fmod(col.h + ((fac - 0.5) * 0.5), 1), col.s, col.v, col.a)

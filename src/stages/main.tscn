@@ -166,13 +166,11 @@ current = true
 process_mode = 3
 stream = ExtResource("7_08m0y")
 autoplay = true
-bus = &"SoundEffects"
 
 [node name="RandomAthmoSound" type="AudioStreamPlayer2D" parent="Player/Follower" unique_id=2035022476]
 unique_name_in_owner = true
 process_mode = 3
 stream = ExtResource("9_rmjuh")
-bus = &"SoundEffects"
 script = ExtResource("10_ryslc")
 
 [node name="CameraPlayer" type="Node2D" parent="Player/Follower" unique_id=199135062 node_paths=PackedStringArray("follow_target")]

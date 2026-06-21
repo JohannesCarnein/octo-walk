@@ -52,6 +52,8 @@ func _physics_process(delta: float) -> void:
 	prevent_inverted_knee(delta * 0.2)
 	if moved:
 		_time_under_tension += delta
+		%ActiveRagdoll.bone_to_body[%B_Root].apply_impulse(Vector2(0, -1000 * delta))
+		
 	else:
 		_time_under_tension -= delta * 3
 	var center_of_mass: Vector2 = %ActiveRagdoll.get_center_of_mass()
@@ -86,12 +88,12 @@ func jump() -> void:
 	if !jump_tween1:
 		jump_tween1 = create_tween()
 		jump_tween1.tween_property(%StepTargets, "position", Vector2(-200, 200), 0.1)
-		jump_tween1.tween_property(%StepTargets, "position", Vector2.ZERO, 0.4)
-		%ActiveRagdoll.bone_to_body[%B_FootL].apply_impulse(Vector2(200, -400))
-		%ActiveRagdoll.bone_to_body[%B_FootR].apply_impulse(Vector2(200, -400))
-		%ActiveRagdoll.bone_to_body[%B_kneeL].apply_impulse(Vector2(500, -400))
-		%ActiveRagdoll.bone_to_body[%B_kneeR].apply_impulse(Vector2(500, -400))
-		%ActiveRagdoll.bone_to_body[%B_Root].apply_impulse(Vector2(450, -200))
+		jump_tween1.tween_property(%StepTargets, "position", Vector2.ZERO, 1.5)
+		%ActiveRagdoll.bone_to_body[%B_FootL].apply_impulse(Vector2(600, -200))
+		%ActiveRagdoll.bone_to_body[%B_FootR].apply_impulse(Vector2(600, -200))
+		%ActiveRagdoll.bone_to_body[%B_kneeL].apply_impulse(Vector2(600, -600))
+		%ActiveRagdoll.bone_to_body[%B_kneeR].apply_impulse(Vector2(600, -600))
+		%ActiveRagdoll.bone_to_body[%B_Root].apply_impulse(Vector2(250, -200))
 	elif jump_tween1.is_running():
 		pass
 	else:
@@ -100,8 +102,8 @@ func jump() -> void:
 
 	if !jump_tween2:
 		jump_tween2 = create_tween()
-		jump_tween2.tween_property(self, "jump_boost", 3.0, 0.1)
-		jump_tween2.tween_property(self, "jump_boost", 1.0, 0.2)
+		jump_tween2.tween_property(self, "jump_boost", 2.0, 0.1)
+		jump_tween2.tween_property(self, "jump_boost", 1.0,  1.5)
 	
 	elif jump_tween2.is_running():
 		pass
@@ -109,25 +111,19 @@ func jump() -> void:
 		jump_tween2 = null
 		jump()
 
-
-
 func play_anim(anim_name: String) -> void:
 	#%AnimationPlayer.play(anim_name)
 	pass
 
 func Lstep_left(strength: float) -> void:
 	%FootLTarget.approach_target(%StepTargetL, strength)
-	%B_FootL.global_rotation = deg_to_rad(-90)
 	
 func Lstep_right(strength: float) -> void:
 	%FootLTarget.approach_target(%StepTargetR, strength)
-	%B_FootL.global_rotation = deg_to_rad(-90)
 	
 func Rstep_left(strength: float) -> void:
 	%FootRTarget.approach_target(%StepTargetL, strength)
-	%B_FootL.global_rotation = deg_to_rad(-90)
 	
 func Rstep_right(strength: float) -> void:
 	%FootRTarget.approach_target(%StepTargetR, strength)
-	%B_FootL.global_rotation = deg_to_rad(90)
 	
