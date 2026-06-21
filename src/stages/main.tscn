@@ -14,6 +14,8 @@
 [ext_resource type="AudioStream" uid="uid://dh1ggqjyqhooa" path="res://assets/sounds/athmosphere/Atmo Randomise.wav" id="9_rmjuh"]
 [ext_resource type="Texture2D" uid="uid://b2avd4l6iv6d0" path="res://assets/sprites/wave-spritesheet.png" id="10_r6fik"]
 [ext_resource type="Script" uid="uid://2yrgfxtwltx1" path="res://src/random_delay_sound_player.gd" id="10_ryslc"]
+[ext_resource type="Texture2D" uid="uid://cdkgyrd57a4ap" path="res://assets/sprites/vogel2_spritesheet.png" id="12_dl424"]
+[ext_resource type="Texture2D" uid="uid://biev08vw31hgs" path="res://assets/sprites/vogel3_spritesheet.png" id="13_4fwq7"]
 [ext_resource type="PackedScene" uid="uid://4agr42px48nm" path="res://johannesNurTesting/Character.tscn" id="14_c0fna"]
 [ext_resource type="Shader" uid="uid://c3xr7dscvibdd" path="res://shader/screen_shader.gdshader" id="14_dhsjo"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="17_c0fna"]
@@ -24,6 +26,18 @@
 [ext_resource type="Texture2D" uid="uid://bxms0d8ultprg" path="res://assets/sprites/controls.png" id="23_kje8p"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vb6l7"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_s8e3e"]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 2
+particles_anim_loop = true
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_m3yb5"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 3
+particles_anim_loop = true
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bxtlg"]
 atlas = ExtResource("10_r6fik")
@@ -129,6 +143,43 @@ position = Vector2(2880, 412)
 [node name="Stage3" parent="Stages" unique_id=1716539123 instance=ExtResource("6_r6fik")]
 unique_name_in_owner = true
 position = Vector2(5760, 412)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1651944809]
+position = Vector2(-1536, -399)
+
+[node name="Birds1" type="CPUParticles2D" parent="Node2D" unique_id=322312464]
+material = SubResource("CanvasItemMaterial_s8e3e")
+amount = 3
+texture = ExtResource("12_dl424")
+lifetime = 60.0
+preprocess = 30.0
+emission_shape = 3
+emission_rect_extents = Vector2(1, 200)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+scale_amount_min = 0.6
+scale_amount_max = 0.8
+anim_speed_min = 50.0
+anim_speed_max = 50.0
+
+[node name="Birds2" type="CPUParticles2D" parent="Node2D" unique_id=1645877358]
+material = SubResource("CanvasItemMaterial_m3yb5")
+amount = 3
+texture = ExtResource("13_4fwq7")
+lifetime = 60.0
+preprocess = 15.0
+emission_shape = 3
+emission_rect_extents = Vector2(1, 200)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+scale_amount_min = 0.6
+scale_amount_max = 0.8
+anim_speed_min = 50.0
+anim_speed_max = 50.0
 
 [node name="Foregound" parent="." unique_id=1000663439 instance=ExtResource("3_1nyjt")]
 position = Vector2(0, 460)
