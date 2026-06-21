@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dcmawb77386eh"]
+
+[ext_resource type="PackedScene" uid="uid://bf4r0rkqe3shj" path="res://src/water_meter.tscn" id="1_r5j2p"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1930881037]
+
+[node name="WaterMeter" parent="." unique_id=1715216701 instance=ExtResource("1_r5j2p")]
+position = Vector2(125, 550)

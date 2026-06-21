@@ -15,6 +15,7 @@ func _ready() -> void:
 
 func set_fill(value: float) -> void:
 	fill_pct = clampf(value, 0.0, 1.0)
+	if not is_inside_tree(): await ready
 	(_meter.material as ShaderMaterial).set_shader_parameter("depletion_pct", 1.0 - fill_pct)
 	if fill_pct <= 0.0:
 		depleted.emit()

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://crbqaibiadlqj"
+path="res://.godot/imported/Armor Movement-001-001.wav-091fc3cfa82d09397bc017f14e4ad1fa.sample"
+
+[deps]
+
+source_file="res://assets/sounds/armor/Armor Movement-001-001.wav"
+dest_files=["res://.godot/imported/Armor Movement-001-001.wav-091fc3cfa82d09397bc017f14e4ad1fa.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://cqr6mo2eyup7k"]
+
+[ext_resource type="PackedScene" uid="uid://bmsankgqnytxt" path="res://src/background1.tscn" id="1_tgyxw"]
+[ext_resource type="Script" uid="uid://dp0kl4ocftk1l" path="res://src/stages/game_controller.gd" id="1_vkwty"]
+[ext_resource type="Texture2D" uid="uid://cedd8l6bfnxxo" path="res://assets/sprites/ground-spritesheet.png" id="2_08m0y"]
+[ext_resource type="PackedScene" uid="uid://crn6osp0hsy1b" path="res://src/Foreground1.tscn" id="3_1nyjt"]
+[ext_resource type="PackedScene" uid="uid://dcmawb77386eh" path="res://src/UI.tscn" id="4_mr7yi"]
+[ext_resource type="PackedScene" uid="uid://08ygld83vt76" path="res://src/stages/stage1.tscn" id="4_rcvto"]
+[ext_resource type="PackedScene" uid="uid://cslhcncxkff7c" path="res://src/stages/stage2.tscn" id="5_dhsjo"]
+[ext_resource type="PackedScene" uid="uid://0iygbixdavxw" path="res://src/moses.tscn" id="5_vkwty"]
+[ext_resource type="PackedScene" uid="uid://cx6pnel61rihc" path="res://src/stages/stage3.tscn" id="6_r6fik"]
+[ext_resource type="PackedScene" uid="uid://cxhuf81bwjxd5" path="res://src/player_controller.tscn" id="6_rmjuh"]
+[ext_resource type="AudioStream" uid="uid://dguaihbvmv5hy" path="res://assets/sounds/athmosphere/Atmo 01.ogg" id="7_08m0y"]
+[ext_resource type="AudioStream" uid="uid://dh1ggqjyqhooa" path="res://assets/sounds/athmosphere/Atmo Randomise.wav" id="9_rmjuh"]
+[ext_resource type="Script" uid="uid://2yrgfxtwltx1" path="res://src/random_delay_sound_player.gd" id="10_ryslc"]
+[ext_resource type="Shader" uid="uid://c3xr7dscvibdd" path="res://shader/screen_shader.gdshader" id="14_dhsjo"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vb6l7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vb6l7"]
+shader = ExtResource("14_dhsjo")
+shader_parameter/pixelation = 0.0030000001425
+shader_parameter/opacity = 1.0
+shader_parameter/noise_intensity = 0.030000001425
+
+[node name="GameController" type="Node2D" unique_id=898238342]
+script = ExtResource("1_vkwty")
+
+[node name="Background" parent="." unique_id=570782868 instance=ExtResource("1_tgyxw")]
+position = Vector2(1, -563)
+
+[node name="Floor" type="Node2D" parent="." unique_id=1354760882]
+
+[node name="Sprite2D3" type="Sprite2D" parent="Floor" unique_id=593436846]
+position = Vector2(-1440, 412)
+texture = ExtResource("2_08m0y")
+region_enabled = true
+region_rect = Rect2(0, 809.98413, 1440, 270.01587)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor" unique_id=715639521]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D" unique_id=1285637037]
+position = Vector2(0, 278)
+shape = SubResource("WorldBoundaryShape2D_vb6l7")
+
+[node name="Stage1" parent="Floor" unique_id=708795216 instance=ExtResource("4_rcvto")]
+unique_name_in_owner = true
+position = Vector2(0, 412)
+
+[node name="Stage2" parent="Floor" unique_id=169519952 instance=ExtResource("5_dhsjo")]
+unique_name_in_owner = true
+position = Vector2(2880, 412)
+
+[node name="Stage3" parent="Floor" unique_id=1716539123 instance=ExtResource("6_r6fik")]
+unique_name_in_owner = true
+position = Vector2(5760, 412)
+
+[node name="Foregound" parent="." unique_id=1000663439 instance=ExtResource("3_1nyjt")]
+position = Vector2(0, 460)
+
+[node name="CanvasLayer" parent="." unique_id=1930881037 instance=ExtResource("4_mr7yi")]
+
+[node name="Moses" parent="." unique_id=2060770436 instance=ExtResource("5_vkwty")]
+unique_name_in_owner = true
+position = Vector2(2010, 149)
+
+[node name="Player" parent="." unique_id=1375881935 instance=ExtResource("6_rmjuh")]
+unique_name_in_owner = true
+position = Vector2(-620, 155)
+speed = 300.0
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1581411417]
+position = Vector2(620, -155)
+
+[node name="AudioListener2D" type="AudioListener2D" parent="Player" unique_id=967732842]
+current = true
+
+[node name="AthmosphereSound" type="AudioStreamPlayer2D" parent="Player" unique_id=302815487]
+position = Vector2(620, -155)
+stream = ExtResource("7_08m0y")
+autoplay = true
+bus = &"SoundEffects"
+
+[node name="RandomAthmoSound" type="AudioStreamPlayer2D" parent="Player" unique_id=2035022476]
+unique_name_in_owner = true
+position = Vector2(620, -155)
+stream = ExtResource("9_rmjuh")
+bus = &"SoundEffects"
+script = ExtResource("10_ryslc")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=2125004753]
+
+[node name="ScreenShader" type="ColorRect" parent="CanvasLayer2" unique_id=1780666873]
+material = SubResource("ShaderMaterial_vb6l7")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

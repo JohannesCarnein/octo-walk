@@ -1,0 +1,221 @@
+[gd_scene format=3 uid="uid://bmsankgqnytxt"]
+
+[ext_resource type="Texture2D" uid="uid://qabhnypmcgh1" path="res://assets/sprites/background.png" id="1_ejgox"]
+[ext_resource type="Texture2D" uid="uid://bl6524o6ypp8" path="res://assets/sprites/clouds-spritesheet.png" id="1_kat7n"]
+
+[node name="Background" type="Node2D" unique_id=570782868]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=910139696]
+scroll_scale = Vector2(0.3, 1)
+repeat_size = Vector2(1920, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=949922145]
+position = Vector2(0, 472)
+texture = ExtResource("1_ejgox")
+
+[node name="Parallax2D6" type="Parallax2D" parent="." unique_id=2126725106]
+scroll_scale = Vector2(0.8, 1)
+scroll_offset = Vector2(0, 100.000015)
+repeat_size = Vector2(10000, 0)
+autoscroll = Vector2(9, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D6" unique_id=649880231]
+position = Vector2(-1968, 529)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(3102, 50, 802, 419)
+
+[node name="Sprite2D16" type="Sprite2D" parent="Parallax2D6" unique_id=1019115580]
+position = Vector2(668, 596)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(3102, 50, 802, 419)
+
+[node name="Sprite2D12" type="Sprite2D" parent="Parallax2D6" unique_id=412737246]
+position = Vector2(4748, 493)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(3102, 50, 802, 419)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D6" unique_id=1265904383]
+position = Vector2(-946, 426)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(4018, 0, 952, 489)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Parallax2D6" unique_id=1258025312]
+position = Vector2(948, 146)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(4510, 533, 476, 439)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Parallax2D6" unique_id=1587988897]
+position = Vector2(292, 111.999985)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(4072, 557, 350, 386)
+
+[node name="Sprite2D14" type="Sprite2D" parent="Parallax2D6" unique_id=244868751]
+position = Vector2(4832, 102.999985)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(4072, 557, 350, 386)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Parallax2D6" unique_id=464775383]
+position = Vector2(-48, 466)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(3008, 516, 992, 484)
+
+[node name="Sprite2D11" type="Sprite2D" parent="Parallax2D6" unique_id=188298824]
+position = Vector2(3981, 197)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(3008, 516, 992, 484)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Parallax2D6" unique_id=87324995]
+position = Vector2(-2667, 196.99997)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(2038.731, 499.20523, 928.0713, 504.73593)
+
+[node name="Sprite2D7" type="Sprite2D" parent="Parallax2D6" unique_id=394567795]
+position = Vector2(2433, 212)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(1507.8174, 2.6358643, 1481.669, 497.55798)
+
+[node name="Sprite2D15" type="Sprite2D" parent="Parallax2D6" unique_id=110246218]
+position = Vector2(6518, 586)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(1507.8174, 2.6358643, 1481.669, 497.55798)
+
+[node name="Sprite2D8" type="Sprite2D" parent="Parallax2D6" unique_id=894088625]
+position = Vector2(3387, 530)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(1046.8074, 524.56384, 934.09717, 417.26917)
+
+[node name="Sprite2D9" type="Sprite2D" parent="Parallax2D6" unique_id=136858758]
+position = Vector2(-1316, 81)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(23.400024, -2.9190063, 1482.474, 505.52142)
+
+[node name="Sprite2D10" type="Sprite2D" parent="Parallax2D6" unique_id=457179749]
+position = Vector2(1561, 520)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(-2.9538574, 502.19623, 1009.5696, 505.52142)
+
+[node name="Sprite2D13" type="Sprite2D" parent="Parallax2D6" unique_id=1060028678]
+position = Vector2(5732, 239)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(-2.9538574, 502.19623, 1009.5696, 505.52142)
+
+[node name="Parallax2D7" type="Parallax2D" parent="." unique_id=904103990]
+modulate = Color(1.1291975, 1.1291975, 1.1291975, 1)
+scale = Vector2(0.7308599, 0.7308599)
+scroll_scale = Vector2(0.7, 1)
+scroll_offset = Vector2(0, 75)
+repeat_size = Vector2(10000, 0)
+autoscroll = Vector2(15, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D7" unique_id=1179881834]
+position = Vector2(1821.1428, 511.72598)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(3102, 50, 802, 419)
+
+[node name="Sprite2D12" type="Sprite2D" parent="Parallax2D7" unique_id=4480807]
+position = Vector2(6328.1626, 451.52292)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(3102, 50, 802, 419)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D7" unique_id=1688482894]
+position = Vector2(1466.7655, 129.98383)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(4018, 0, 952, 489)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Parallax2D7" unique_id=1598264409]
+position = Vector2(-771.694, 353.00885)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(4510, 533, 476, 439)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Parallax2D7" unique_id=863608476]
+position = Vector2(-321.53912, 180.60919)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(4072, 557, 350, 386)
+
+[node name="Sprite2D14" type="Sprite2D" parent="Parallax2D7" unique_id=1283285151]
+position = Vector2(4832, 102.999985)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(4072, 557, 350, 386)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Parallax2D7" unique_id=828374152]
+position = Vector2(467.94196, 205.2377)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(3008, 516, 992, 484)
+
+[node name="Sprite2D11" type="Sprite2D" parent="Parallax2D7" unique_id=1357944045]
+position = Vector2(3981, 197)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(3008, 516, 992, 484)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Parallax2D7" unique_id=726851627]
+position = Vector2(-1535.1782, 511.7259)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(2038.731, 499.20523, 928.0713, 504.73593)
+
+[node name="Sprite2D7" type="Sprite2D" parent="Parallax2D7" unique_id=724006149]
+position = Vector2(-2799.4429, 197.0282)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(1507.8174, 2.6358643, 1481.669, 497.55798)
+
+[node name="Sprite2D15" type="Sprite2D" parent="Parallax2D7" unique_id=132383181]
+position = Vector2(3233.1777, 488.46576)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(1507.8174, 2.6358643, 1481.669, 497.55798)
+
+[node name="Sprite2D8" type="Sprite2D" parent="Parallax2D7" unique_id=1609164839]
+position = Vector2(5016.0093, 511.72595)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(1046.8074, 524.56384, 934.09717, 417.26917)
+
+[node name="Sprite2D9" type="Sprite2D" parent="Parallax2D7" unique_id=1160444045]
+position = Vector2(-1316, 81)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(23.400024, -2.9190063, 1482.474, 505.52142)
+
+[node name="Sprite2D10" type="Sprite2D" parent="Parallax2D7" unique_id=2145185409]
+position = Vector2(5887.586, 140.92981)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(-2.9538574, 502.19623, 1009.5696, 505.52142)
+
+[node name="Sprite2D13" type="Sprite2D" parent="Parallax2D7" unique_id=1213660589]
+position = Vector2(2720.0837, 140.92989)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(-2.9538574, 502.19623, 1009.5696, 505.52142)
+
+[node name="Sprite2D16" type="Sprite2D" parent="Parallax2D7" unique_id=776598165]
+position = Vector2(176.50415, 592.4529)
+texture = ExtResource("1_kat7n")
+region_enabled = true
+region_rect = Rect2(-2.9538574, 502.19623, 1009.5696, 505.52142)
