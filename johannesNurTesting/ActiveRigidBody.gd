@@ -67,6 +67,7 @@ func _init(b: MetaBone, skel: Skeleton2D) -> void:
 func register_as_follower_bone(b: Bone2D) -> void:
 	remote_transform.remote_path = b.get_path()
 	
+	
 
 func _ready() -> void:
 	add_child(collisionShape)

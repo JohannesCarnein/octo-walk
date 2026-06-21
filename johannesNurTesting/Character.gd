@@ -2,9 +2,9 @@ class_name Character
 extends Node2D
 
 @export var min_strength: float = 1
-@export var max_strength: float = 20
+@export var max_strength: float = 3
 @export var move_speed: float = 800
-@export var time_till_max_strength: float = 3
+@export var time_till_max_strength: float = 8
 
 @export var willingness_to_move_right: float = 3
 @export var follower: Node2D
@@ -52,7 +52,7 @@ func _physics_process(delta: float) -> void:
 	prevent_inverted_knee(delta * 0.2)
 	if moved:
 		_time_under_tension += delta
-		%ActiveRagdoll.bone_to_body[%B_Root].apply_impulse(Vector2(0, -1000 * delta))
+		%ActiveRagdoll.bone_to_body[%B_Root].apply_impulse(Vector2(0, -800 * delta))
 		
 	else:
 		_time_under_tension -= delta * 3
@@ -69,10 +69,12 @@ func get_strength() -> float:
 	return lerpf(min_strength, max_strength, get_mapped_tut()) * jump_boost
 	
 func prevent_inverted_knee(strength: float) -> void:
-	%B_Leg2L.rotate(strength)
-	%B_kneeL.rotate(2 * strength)
-	%B_Leg2R.rotate(strength)
-	%B_kneeR.rotate(2 * strength)
+	%B_Leg2L.rotate(2 * strength)
+	%B_kneeL.rotate(3 * strength)
+	%B_Leg2R.rotate(2 * strength)
+	%B_kneeR.rotate(3 * strength)
+	%ActiveRagdoll.bone_to_body[%B_FootL].apply_torque(10000000*strength)
+	%ActiveRagdoll.bone_to_body[%B_FootR].apply_torque(10000000*strength)
 	
 func _input(event):
 	if event is InputEventKey and event.pressed and not event.echo:
@@ -102,8 +104,8 @@ func jump() -> void:
 
 	if !jump_tween2:
 		jump_tween2 = create_tween()
-		jump_tween2.tween_property(self, "jump_boost", 2.0, 0.1)
-		jump_tween2.tween_property(self, "jump_boost", 1.0,  1.5)
+		jump_tween2.tween_property(self, "jump_boost", 3.0, 0.3)
+		jump_tween2.tween_property(self, "jump_boost", 1.0,  1.3)
 	
 	elif jump_tween2.is_running():
 		pass
@@ -117,13 +119,25 @@ func play_anim(anim_name: String) -> void:
 
 func Lstep_left(strength: float) -> void:
 	%FootLTarget.approach_target(%StepTargetL, strength)
+	%ActiveRagdoll.bone_to_body[%B_FootL].apply_impulse(Vector2(0, 0.03)*strength)
+	%ActiveRagdoll.bone_to_body[%B_Root].apply_torque(70*strength)
 	
 func Lstep_right(strength: float) -> void:
 	%FootLTarget.approach_target(%StepTargetR, strength)
+	%ActiveRagdoll.bone_to_body[%B_FootL].apply_impulse(Vector2(0, -0.05)*strength)
+	%ActiveRagdoll.bone_to_body[%B_FootL].apply_torque(-1000*strength)
+	%ActiveRagdoll.bone_to_body[%B_Root].apply_torque(-200*strength)
+	%ActiveRagdoll.bone_to_body[%B_Root].apply_impulse(Vector2(-0.035, 0.005)*strength)
 	
 func Rstep_left(strength: float) -> void:
 	%FootRTarget.approach_target(%StepTargetL, strength)
+	%ActiveRagdoll.bone_to_body[%B_FootR].apply_impulse(Vector2(0, 0.03)*strength)
+	%ActiveRagdoll.bone_to_body[%B_Root].apply_torque(70*strength)
 	
 func Rstep_right(strength: float) -> void:
 	%FootRTarget.approach_target(%StepTargetR, strength)
+	%ActiveRagdoll.bone_to_body[%B_FootR].apply_impulse(Vector2(0, -0.05)*strength)
+	%ActiveRagdoll.bone_to_body[%B_FootR].apply_torque(-1000*strength)
+	%ActiveRagdoll.bone_to_body[%B_Root].apply_torque(-200*strength)
+	%ActiveRagdoll.bone_to_body[%B_Root].apply_impulse(Vector2(-0.035, 0.005)*strength)
 	

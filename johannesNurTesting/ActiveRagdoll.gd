@@ -72,8 +72,8 @@ func _connect_bodies(parent_body: ActiveRigidBody, child_body: ActiveRigidBody) 
 	joint.node_b = child_body.get_path()
 	
 func get_center_of_mass() -> Vector2:
-	var com: Vector2 = Vector2.ZERO
-	var furthes: float = 0
+	var com: Vector2 = global_position
+	var furthes: float = global_position.x
 	var i: int = 0
 	for body in bone_to_body.values():
 		com += body.global_position
