@@ -143,8 +143,8 @@ metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 
 [node name="B_Leg1L" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root" unique_id=83520889]
 unique_name_in_owner = true
-position = Vector2(8, 46)
-scale = Vector2(0.9997269, 0.9997269)
+position = Vector2(10, 46)
+scale = Vector2(0.99970895, 0.99970895)
 rest = Transform2D(1, 0, 0, 1, 0, 22)
 script = ExtResource("3_ym8rp")
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
@@ -184,9 +184,9 @@ metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 
 [node name="B_Leg1R" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root" unique_id=740194004]
 unique_name_in_owner = true
-position = Vector2(-6.9999995, 47)
-rotation = 0.020707369
-scale = Vector2(0.9998274, 0.9998274)
+position = Vector2(-9.999999, 47)
+rotation = 0.021254627
+scale = Vector2(0.9998481, 0.9998481)
 rest = Transform2D(1, 0, 0, 1, 0, 22)
 script = ExtResource("3_ym8rp")
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
@@ -220,7 +220,7 @@ position = Vector2(0, 50)
 rest = Transform2D(1, 0, 0, 1, 0, 50)
 auto_calculate_length_and_angle = false
 length = 30.0
-bone_angle = 0.0
+bone_angle = 180.0
 script = ExtResource("3_ym8rp")
 shape_override = SubResource("CircleShape2D_nw7kw")
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
@@ -240,12 +240,12 @@ position = Vector2(-94, 116)
 
 [node name="FootLTarget" type="Node2D" parent="ActiveRagdoll/SkeletonHolder/IKTargets" unique_id=1016009318]
 unique_name_in_owner = true
-position = Vector2(8, 183)
+position = Vector2(10, 183)
 script = ExtResource("4_nw7kw")
 
 [node name="FootRTarget" type="Node2D" parent="ActiveRagdoll/SkeletonHolder/IKTargets" unique_id=484511114]
 unique_name_in_owner = true
-position = Vector2(-7, 184)
+position = Vector2(-10, 184)
 script = ExtResource("4_nw7kw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2022292459]
