@@ -22,7 +22,7 @@ polygon = PackedVector2Array(-138, -20, -181, 8, -206, 62, -242, 114, 246, 114, 
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles" index="1" unique_id=996621985]
-position = Vector2(499, -200)
+position = Vector2(451, -200)
 texture = ExtResource("2_b55l6")
 region_enabled = true
 region_rect = Rect2(1206, 263, 378, 137)
@@ -36,7 +36,7 @@ polygon = PackedVector2Array(-121, -59, -127, -21, -157, 21, -196, 72, 195, 69, 
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="Obstacles" index="2" unique_id=390941205]
-position = Vector2(1248, -245)
+position = Vector2(1144, -245)
 texture = ExtResource("2_b55l6")
 region_enabled = true
 region_rect = Rect2(2, 558, 796, 242)
