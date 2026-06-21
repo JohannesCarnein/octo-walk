@@ -4,6 +4,14 @@
 [ext_resource type="Script" uid="uid://cgm1ldgdif6yq" path="res://johannesNurTesting/ActiveRagdoll.gd" id="3_nw7kw"]
 [ext_resource type="Script" uid="uid://bqj3bqscufuvx" path="res://johannesNurTesting/MetaBone.gd" id="3_ym8rp"]
 [ext_resource type="Script" uid="uid://cc6ircdlh5n7d" path="res://johannesNurTesting/Retractable.gd" id="4_nw7kw"]
+[ext_resource type="Texture2D" uid="uid://djyj640rv5ikr" path="res://assets/octopus.png" id="5_y4thy"]
+[ext_resource type="Shader" uid="uid://djjpys0avd2s5" path="res://shader/tentacle.gdshader" id="6_i0y0a"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4sjkn"]
+shader = ExtResource("6_i0y0a")
+shader_parameter/amplitude = 20.0
+shader_parameter/frequency = 10.000000475
+shader_parameter/speed = 2.0
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_anga4"]
 target_nodepath = NodePath("../IKTargets/FootLTarget")
@@ -63,7 +71,15 @@ modification_count = 2
 modifications/0 = SubResource("SkeletonModification2DCCDIK_anga4")
 modifications/1 = SubResource("SkeletonModification2DCCDIK_nw7kw")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_nw7kw"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i0y0a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0y0a"]
+size = Vector2(30, 10)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6vf32"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y4thy"]
+size = Vector2(30, 10)
 
 [sub_resource type="Animation" id="Animation_ym8rp"]
 resource_name = "MoveL"
@@ -124,6 +140,136 @@ script = ExtResource("1_ym8rp")
 unique_name_in_owner = true
 script = ExtResource("3_nw7kw")
 
+[node name="CharacterMeshHolder" type="Node2D" parent="ActiveRagdoll" unique_id=14187304]
+unique_name_in_owner = true
+
+[node name="TentacleR" type="Polygon2D" parent="ActiveRagdoll/CharacterMeshHolder" unique_id=1347171843]
+visible = false
+position = Vector2(88, -76)
+texture = ExtResource("5_y4thy")
+polygon = PackedVector2Array(169.52133, 311.80487, 156.20256, 328.6286, 157.95503, 345.8028, 142.18282, 368.23438, 144.98676, 402.9333, 132.36899, 445.34302, 135.87747, 468.11987, 131.32106, 492.65445, 148.49525, 507.72568, 153.05168, 523.1474, 156.55661, 561.3512, 155.50172, 584.4812, 157.95518, 607.26324, 159.35715, 638.10675, 161.81061, 664.0433, 161.45871, 688.22546, 160.40723, 711.35803, 156.55179, 737.29456, 159.35574, 755.1698, 158.30426, 776.1994, 159.70844, 802.4828, 157.95596, 827.7184, 156.2035, 849.09845, 153.39955, 868.3756, 149.19362, 892.9102, 147.79164, 911.4864, 157.95596, 915.3418, 168.82127, 901.67255, 172.32622, 875.3855, 182.84103, 861.71625, 187.39745, 843.1401, 195.10832, 830.1718, 192.30437, 811.2451, 201.06314, 795.1273, 195.10474, 787.7669, 208.07301, 774.4481, 204.56807, 760.7789, 210.5217, 747.4621, 209.82071, 728.18494, 202.81085, 721.8761, 203.15941, 712.0649, 192.2941, 700.8491, 201.40694, 686.4788, 200.00496, 674.5621, 209.81401, 657.04266, 207.36055, 642.3219, 198.9487, 632.5081, 201.75172, 621.9956, 197.89629, 596.7601, 195.09235, 579.23535, 196.14337, 555.40576, 199.2978, 539.2831, 201.04787, 525.2659, 196.14095, 514.4006, 199.2954, 497.5769, 211.56268, 492.66998, 214.01613, 475.4958, 223.12897, 464.27997, 220.67523, 444.6535, 229.43758, 436.94263, 232.24153, 423.97437, 233.64351, 403.99622, 228.0356, 393.83188, 241.70187, 377.71097, 244.15533, 357.03186, 238.19693, 336.0022, 227.68213, 321.98245, 206.6525, 311.11716)
+uv = PackedVector2Array(169.52133, 311.80487, 156.20256, 328.6286, 157.95503, 345.8028, 142.18282, 368.23438, 144.98676, 402.9333, 132.36899, 445.34302, 135.87747, 468.11987, 131.32106, 492.65445, 148.49525, 507.72568, 153.05168, 523.1474, 156.55661, 561.3512, 155.50172, 584.4812, 157.95518, 607.26324, 159.35715, 638.10675, 161.81061, 664.0433, 161.45871, 688.22546, 160.40723, 711.35803, 156.55179, 737.29456, 159.35574, 755.1698, 158.30426, 776.1994, 159.70844, 802.4828, 157.95596, 827.7184, 156.2035, 849.09845, 153.39955, 868.3756, 149.19362, 892.9102, 147.79164, 911.4864, 157.95596, 915.3418, 168.82127, 901.67255, 172.32622, 875.3855, 182.84103, 861.71625, 187.39745, 843.1401, 195.10832, 830.1718, 192.30437, 811.2451, 201.06314, 795.1273, 195.10474, 787.7669, 208.07301, 774.4481, 204.56807, 760.7789, 210.5217, 747.4621, 209.82071, 728.18494, 202.81085, 721.8761, 203.15941, 712.0649, 192.2941, 700.8491, 201.40694, 686.4788, 200.00496, 674.5621, 209.81401, 657.04266, 207.36055, 642.3219, 198.9487, 632.5081, 201.75172, 621.9956, 197.89629, 596.7601, 195.09235, 579.23535, 196.14337, 555.40576, 199.2978, 539.2831, 201.04787, 525.2659, 196.14095, 514.4006, 199.2954, 497.5769, 211.56268, 492.66998, 214.01613, 475.4958, 223.12897, 464.27997, 220.67523, 444.6535, 229.43758, 436.94263, 232.24153, 423.97437, 233.64351, 403.99622, 228.0356, 393.83188, 241.70187, 377.71097, 244.15533, 357.03186, 238.19693, 336.0022, 227.68213, 321.98245, 206.6525, 311.11716)
+
+[node name="TentacleFree" type="Polygon2D" parent="ActiveRagdoll/CharacterMeshHolder" unique_id=863691836]
+visible = false
+material = SubResource("ShaderMaterial_4sjkn")
+position = Vector2(114, -124)
+texture = ExtResource("5_y4thy")
+polygon = PackedVector2Array(895.27374, 321.5132, 893.0769, 351.16998, 893.6261, 384.12195, 894.17535, 414.3279, 894.72455, 461.55908, 894.72455, 496.70782, 892.5277, 526.3646, 889.2322, 558.21985, 888.683, 598.8606, 888.1337, 632.36176, 880.99414, 660.371, 887.03534, 693.3229, 877.1517, 711.44653, 885.38965, 723.52893, 879.89764, 737.8081, 883.1929, 743.8493, 879.89764, 757.5793, 887.5864, 769.1125, 885.93884, 778.99805, 889.7832, 792.17883, 893.62164, 813.05176, 900.7612, 841.0609, 912.8436, 835.0197, 917.2372, 791.63293, 919.98315, 752.6398, 918.88477, 720.78625, 916.688, 691.6787, 921.0816, 664.2187, 922.18, 634.56195, 921.07996, 591.7246, 919.4324, 557.12506, 921.07996, 532.41113, 924.3751, 495.06555, 922.17834, 464.31036, 924.3751, 417.62842, 922.7266, 381.93146, 923.8251, 350.07788, 921.62823, 318.22433)
+uv = PackedVector2Array(895.27374, 321.5132, 893.0769, 351.16998, 893.6261, 384.12195, 894.17535, 414.3279, 894.72455, 461.55908, 894.72455, 496.70782, 892.5277, 526.3646, 889.2322, 558.21985, 888.683, 598.8606, 888.1337, 632.36176, 880.99414, 660.371, 887.03534, 693.3229, 877.1517, 711.44653, 885.38965, 723.52893, 879.89764, 737.8081, 883.1929, 743.8493, 879.89764, 757.5793, 887.5864, 769.1125, 885.93884, 778.99805, 889.7832, 792.17883, 893.62164, 813.05176, 900.7612, 841.0609, 912.8436, 835.0197, 917.2372, 791.63293, 919.98315, 752.6398, 918.88477, 720.78625, 916.688, 691.6787, 921.0816, 664.2187, 922.18, 634.56195, 921.07996, 591.7246, 919.4324, 557.12506, 921.07996, 532.41113, 924.3751, 495.06555, 922.17834, 464.31036, 924.3751, 417.62842, 922.7266, 381.93146, 923.8251, 350.07788, 921.62823, 318.22433)
+
+[node name="Torso" type="Polygon2D" parent="ActiveRagdoll/CharacterMeshHolder" unique_id=1872822478]
+position = Vector2(-245.47318, -233.10625)
+scale = Vector2(0.45054623, 0.45054623)
+texture = ExtResource("5_y4thy")
+skeleton = NodePath("../../SkeletonHolder/Skeleton2D")
+polygon = PackedVector2Array(474.9988, 337.10406, 465.11322, 357.42444, 425.5709, 390.37637, 424.4725, 440.90268, 447.53885, 468.9118, 461.26794, 494.7237, 461.81714, 566.6687, 479.94073, 606.21106, 541.451, 611.703, 598.5677, 604.5635, 623.2816, 560.07837, 614.49445, 514.4948, 611.7485, 471.65732, 615.59283, 452.43536, 615.04364, 398.06467, 590.3297, 361.81754, 596.3695, 327.2184, 591.42676, 298.11087, 561.77, 295.91406, 536.50684, 303.05365, 507.3993, 288.77448, 478.29175, 297.01245)
+uv = PackedVector2Array(474.9988, 337.10406, 465.11322, 357.42444, 425.5709, 390.37637, 424.4725, 440.90268, 447.53885, 468.9118, 461.26794, 494.7237, 461.81714, 566.6687, 479.94073, 606.21106, 541.451, 611.703, 598.5677, 604.5635, 623.2816, 560.07837, 614.49445, 514.4948, 611.7485, 471.65732, 615.59283, 452.43536, 615.04364, 398.06467, 590.3297, 361.81754, 596.3695, 327.2184, 591.42676, 298.11087, 561.77, 295.91406, 536.50684, 303.05365, 507.3993, 288.77448, 478.29175, 297.01245)
+bones = ["B_Root", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "B_Root/B_Leg1L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L/B_FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R/B_FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="Belly" type="Polygon2D" parent="ActiveRagdoll/CharacterMeshHolder/Torso" unique_id=1550370842]
+position = Vector2(325, 268)
+texture = ExtResource("5_y4thy")
+skeleton = NodePath("../../../SkeletonHolder/Skeleton2D")
+polygon = PackedVector2Array(158.89636, 216.79636, 161.79965, 288.8947, 217.44604, 292.2819, 281.80228, 288.8947, 293.89932, 258.4102, 284.70557, 208.08649, 255.6727, 191.63452, 227.12366, 200.34439, 190.34866, 193.57004)
+uv = PackedVector2Array(158.89636, 216.79636, 161.79965, 288.8947, 217.44604, 292.2819, 281.80228, 288.8947, 293.89932, 258.4102, 284.70557, 208.08649, 255.6727, 191.63452, 227.12366, 200.34439, 190.34866, 193.57004)
+bones = ["B_Root", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1), "B_Root/B_Leg1L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L/B_FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R/B_FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="Chest" type="Polygon2D" parent="ActiveRagdoll/CharacterMeshHolder/Torso" unique_id=1729508249]
+position = Vector2(324, 285)
+texture = ExtResource("5_y4thy")
+skeleton = NodePath("../../../SkeletonHolder/Skeleton2D")
+polygon = PackedVector2Array(132.96936, 73.19352, 109.74082, 81.45256, 85.4799, 83.51732, 81.86657, 108.810616, 110.25701, 133.07155, 133.48553, 164.55913, 171.16739, 192.43338, 225.36734, 198.62766, 268.72726, 184.17433, 293.5044, 149.07343, 301.24722, 106.22967, 285.76154, 81.96875, 267.6949, 77.83923, 249.62827, 64.4183, 214.52734, 65.450676, 161.87598, 62.35354)
+uv = PackedVector2Array(132.96936, 73.19352, 109.74082, 81.45256, 85.4799, 83.51732, 81.86657, 108.810616, 110.25701, 133.07155, 133.48553, 164.55913, 171.16739, 192.43338, 225.36734, 198.62766, 268.72726, 184.17433, 293.5044, 149.07343, 301.24722, 106.22967, 285.76154, 81.96875, 267.6949, 77.83923, 249.62827, 64.4183, 214.52734, 65.450676, 161.87598, 62.35354)
+bones = ["B_Root", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "B_Root/B_Leg1L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L/B_FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R/B_FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="Helmet" type="Polygon2D" parent="ActiveRagdoll/CharacterMeshHolder" unique_id=432115562]
+visible = false
+position = Vector2(94, -82)
+texture = ExtResource("5_y4thy")
+polygon = PackedVector2Array(509.5324, 277.4154, 469.13678, 294.66296, 437.81885, 273.33044, 382.89896, 260.16785, 327.9792, 212.05605, 323.44037, 147.15073, 347.04025, 74.0762, 380.62762, 50.020386, 479.57422, 56.828636, 533.13245, 106.7558, 562.1809, 173.47702, 553.55853, 220.22769)
+uv = PackedVector2Array(509.5324, 277.4154, 469.13678, 294.66296, 437.81885, 273.33044, 382.89896, 260.16785, 327.9792, 212.05605, 323.44037, 147.15073, 347.04025, 74.0762, 380.62762, 50.020386, 479.57422, 56.828636, 533.13245, 106.7558, 562.1809, 173.47702, 553.55853, 220.22769)
+
+[node name="LegR" type="Polygon2D" parent="ActiveRagdoll/CharacterMeshHolder" unique_id=1918483601]
+position = Vector2(-226.99998, -259.24014)
+scale = Vector2(0.45054623, 0.45054623)
+texture = ExtResource("5_y4thy")
+skeleton = NodePath("../../SkeletonHolder/Skeleton2D")
+polygon = PackedVector2Array(403.9864, 648.3426, 413.50427, 703.0705, 411.91797, 741.9352, 416.6769, 777.6273, 417.47006, 823.6304, 429.36743, 851.3909, 458.71426, 868.04724, 493.61322, 866.46094, 515.02844, 838.70044, 533.27106, 804.5946, 518.20105, 760.1778, 518.20105, 722.8994, 503.1311, 684.03467, 506.3037, 644.37683, 484.09683, 608.6837, 448.40472, 619.78796, 460.88586, 693.03564, 462.5639, 732.4693, 468.437, 775.25903, 458.36884, 649.4069, 471.79303, 807.14154, 473.47107, 836.507)
+uv = PackedVector2Array(403.9864, 648.3426, 413.50427, 703.0705, 411.91797, 741.9352, 416.6769, 777.6273, 417.47006, 823.6304, 429.36743, 851.3909, 458.71426, 868.04724, 493.61322, 866.46094, 515.02844, 838.70044, 533.27106, 804.5946, 518.20105, 760.1778, 518.20105, 722.8994, 503.1311, 684.03467, 506.3037, 644.37683, 484.09683, 608.6837, 448.40472, 619.78796, 460.88586, 693.03564, 463.4029, 745.0545, 467.59796, 795.3954, 458.36884, 649.4069, 471.79303, 807.14154, 473.47107, 836.507)
+polygons = [PackedInt32Array(6, 21, 7), PackedInt32Array(5, 6, 21), PackedInt32Array(4, 20, 21, 5), PackedInt32Array(3, 18, 20, 4), PackedInt32Array(2, 17, 18, 3), PackedInt32Array(1, 16, 17, 2), PackedInt32Array(0, 19, 16, 1), PackedInt32Array(19, 15, 0), PackedInt32Array(16, 19, 13, 12), PackedInt32Array(16, 17, 11, 12), PackedInt32Array(17, 18, 10, 11), PackedInt32Array(20, 18, 10, 9), PackedInt32Array(20, 21, 8, 9), PackedInt32Array(21, 7, 8), PackedInt32Array(15, 14, 19), PackedInt32Array(14, 13, 19)]
+bones = ["B_Root", PackedFloat32Array(1, 0.48, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.48, 1, 1, 1, 0.48, 0, 0, 1, 0, 0), "B_Root/B_Leg1L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L/B_FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R", PackedFloat32Array(0.03999999, 0.52, 0.96, 0.48, 0, 0, 0, 0, 0, 0, 0.48, 0.96, 0.52, 0.03999999, 0.03999999, 0.03999999, 0.48, 0.96, 0.48, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR", PackedFloat32Array(0, 0, 0.03999999, 0.52, 0.96, 0.96, 0.48, 0.48, 0.96, 0.96, 0.52, 0.03999999, 0, 0, 0, 0, 0, 0.48, 1, 0, 1, 1), "B_Root/B_Leg1R/B_kneeR/B_Leg2R", PackedFloat32Array(0, 0, 0, 0, 0.03999999, 0.03999999, 0.52, 0.52, 0.03999999, 0.03999999, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R/B_FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+internal_vertex_count = 6
+
+[node name="LegL" type="Polygon2D" parent="ActiveRagdoll/CharacterMeshHolder" unique_id=1611041201]
+position = Vector2(-263, -250.24017)
+scale = Vector2(0.45054623, 0.45054623)
+texture = ExtResource("5_y4thy")
+skeleton = NodePath("../../SkeletonHolder/Skeleton2D")
+polygon = PackedVector2Array(608.73083, 605.7774, 576.7683, 621.4878, 574.05963, 668.6189, 575.6848, 696.78925, 580.01874, 725.5013, 583.26917, 765.58984, 583.26917, 810.5541, 603.85516, 838.1826, 638.52637, 848.47565, 672.1141, 830.5983, 689.9914, 793.21844, 688.3662, 751.5047, 681.3236, 714.66656, 672.65576, 672.9528, 668.3219, 630.69727, 658.5707, 599.8183, 633.65076, 593.8592, 633.8677, 623.02936, 625.5323, 683.9818, 629.7, 720.44916, 635.43054, 756.3955, 635.43054, 796.5095)
+uv = PackedVector2Array(608.73083, 605.7774, 576.7683, 621.4878, 574.05963, 668.6189, 575.6848, 696.78925, 580.01874, 725.5013, 583.26917, 765.58984, 583.26917, 810.5541, 603.85516, 838.1826, 638.52637, 848.47565, 672.1141, 830.5983, 689.9914, 793.21844, 688.3662, 751.5047, 681.3236, 714.66656, 672.65576, 672.9528, 668.3219, 630.69727, 658.5707, 599.8183, 633.65076, 593.8592, 633.8677, 623.02936, 625.5323, 683.9818, 629.7, 720.44916, 635.43054, 756.3955, 635.43054, 796.5095)
+polygons = [PackedInt32Array(0, 17, 16), PackedInt32Array(17, 16, 15), PackedInt32Array(17, 14, 15), PackedInt32Array(0, 17, 1), PackedInt32Array(1, 2, 18, 17), PackedInt32Array(17, 14, 13, 18), PackedInt32Array(18, 19, 12, 13), PackedInt32Array(19, 20, 11, 12), PackedInt32Array(20, 21, 10, 11), PackedInt32Array(21, 9, 10), PackedInt32Array(21, 8, 9), PackedInt32Array(21, 7, 8), PackedInt32Array(21, 6, 7), PackedInt32Array(21, 20, 5, 6), PackedInt32Array(20, 19, 4, 5), PackedInt32Array(19, 18, 3, 4), PackedInt32Array(18, 2, 3)]
+bones = ["B_Root", PackedFloat32Array(0.96, 0.96, 0.48, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.48, 0.96, 0.96, 0.48, 0, 0, 0, 0), "B_Root/B_Leg1L", PackedFloat32Array(0.03999999, 0.03999999, 0.52, 1, 1, 0.48, 0, 0, 0, 0, 0, 0.48, 1, 1, 1, 0.03999999, 0.03999999, 0.48, 1, 1, 0.48, 0), "B_Root/B_Leg1L/B_kneeL", PackedFloat32Array(0, 0, 0, 0.03999999, 0.03999999, 0.52, 0.96, 0.48, 0.48, 0.48, 0.96, 0.52, 0.03999999, 0, 0, 0, 0, 0, 0, 0, 0.48, 0.96), "B_Root/B_Leg1L/B_kneeL/B_Leg2L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0.03999999, 0.52, 0.52, 0.52, 0.03999999, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L/B_FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R/B_FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+internal_vertex_count = 5
+
+[node name="ShoeR" type="Polygon2D" parent="ActiveRagdoll/CharacterMeshHolder" unique_id=140235916]
+position = Vector2(-265, -269.72955)
+scale = Vector2(0.45054623, 0.45054623)
+texture = ExtResource("5_y4thy")
+skeleton = NodePath("../../SkeletonHolder/Skeleton2D")
+polygon = PackedVector2Array(555.0436, 853.8936, 511.65683, 858.8364, 503.96805, 896.18195, 516.5996, 922.5435, 522.6408, 960.9874, 517.698, 995.5869, 514.952, 1020.8501, 558.33777, 1026.893, 594.58484, 1026.3438, 655.54596, 1027.4421, 662.13635, 1001.08057, 643.46356, 959.8906, 610.5116, 955.4971, 578.1089, 970.32544, 577.5597, 946.70984, 590.1913, 909.3644, 602.2737, 890.6916, 595.13403, 851.6985, 553.4022, 916.7502, 551.83936, 884.45056, 550.2765, 953.21747, 551.83936, 976.1398, 567.46826, 999.58307, 604.9774, 990.7267, 632.0675, 992.2896, 557.56995, 991.7687)
+uv = PackedVector2Array(555.0436, 853.8936, 511.65683, 858.8364, 503.96805, 896.18195, 516.5996, 922.5435, 522.6408, 960.9874, 517.698, 995.5869, 514.952, 1020.8501, 558.33777, 1026.893, 594.58484, 1026.3438, 655.54596, 1027.4421, 662.13635, 1001.08057, 643.46356, 959.8906, 610.5116, 955.4971, 578.1089, 970.32544, 577.5597, 946.70984, 590.1913, 909.3644, 602.2737, 890.6916, 595.13403, 851.6985, 553.4022, 916.7502, 551.83936, 884.45056, 550.2765, 953.21747, 550.2765, 982.39136, 569.5521, 998.0202, 604.9774, 990.7267, 632.0675, 992.2896, 548.1926, 1002.18787)
+polygons = [PackedInt32Array(1, 0, 19, 2), PackedInt32Array(3, 18, 19, 2), PackedInt32Array(3, 4, 20, 18), PackedInt32Array(18, 15, 14, 20), PackedInt32Array(19, 16, 15, 18), PackedInt32Array(0, 17, 16, 19), PackedInt32Array(20, 14, 13, 21), PackedInt32Array(20, 4, 5, 21), PackedInt32Array(12, 23, 24, 11), PackedInt32Array(21, 25, 6, 5), PackedInt32Array(13, 25, 21), PackedInt32Array(22, 25, 13), PackedInt32Array(13, 12, 23, 22), PackedInt32Array(22, 7, 8, 23), PackedInt32Array(25, 6, 7, 22), PackedInt32Array(24, 23, 8, 9), PackedInt32Array(24, 10, 9), PackedInt32Array(24, 11, 10)]
+bones = ["B_Root", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L/B_FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR", PackedFloat32Array(0.96, 0.96, 0.48, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.48, 0.96, 0, 0.48, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R", PackedFloat32Array(0.03999999, 0.03999999, 0.52, 1, 1, 0.48, 0, 0, 0, 0, 0, 0, 0, 0.48, 1, 1, 0.52, 0.03999999, 0.96, 0.48, 0.96, 0.48, 0, 0, 0, 0.48), "B_Root/B_Leg1R/B_kneeR/B_Leg2R/B_FootR", PackedFloat32Array(0.03999999, 0.03999999, 0.03999999, 0.03999999, 0.03999999, 0.52, 1, 1, 1, 1, 1, 1, 1, 0.52, 0, 0.03999999, 0.03999999, 0.03999999, 0, 0, 0, 0.48, 0.96, 0.96, 0.96, 0.48)]
+internal_vertex_count = 8
+
+[node name="ShoeL" type="Polygon2D" parent="ActiveRagdoll/CharacterMeshHolder" unique_id=141322921]
+position = Vector2(-301.99997, -259.72958)
+scale = Vector2(0.45054623, 0.45054623)
+texture = ExtResource("5_y4thy")
+skeleton = NodePath("../../SkeletonHolder/Skeleton2D")
+polygon = PackedVector2Array(667.85596, 847.4782, 671.07227, 886.07416, 680.72125, 915.0211, 682.3294, 948.7926, 676.7008, 1000.25385, 724.9458, 1009.90283, 754.69684, 1006.6865, 816.61115, 1009.90283, 830.2806, 981.75995, 806.96216, 942.3599, 771.5826, 930.2987, 745.04785, 946.3803, 749.8723, 922.2579, 749.8723, 893.3109, 769.1703, 867.58026, 760.3254, 829.7884, 706.4519, 829.7884, 712.2178, 871.5024, 714.70856, 904.23816, 716.9402, 933.04755, 734.7314, 976.8139, 720.1426, 964.0042, 764.2648, 970.7649, 799.8471, 978.2372)
+uv = PackedVector2Array(667.85596, 847.4782, 671.07227, 886.07416, 680.72125, 915.0211, 682.3294, 948.7926, 676.7008, 1000.25385, 724.9458, 1009.90283, 754.69684, 1006.6865, 816.61115, 1009.90283, 830.2806, 981.75995, 806.96216, 942.3599, 771.5826, 930.2987, 745.04785, 946.3803, 749.8723, 922.2579, 749.8723, 893.3109, 769.1703, 867.58026, 760.3254, 829.7884, 706.4519, 829.7884, 712.2178, 871.5024, 714.70856, 904.23816, 716.9402, 933.04755, 734.7314, 976.8139, 720.1426, 964.0042, 764.2648, 970.7649, 799.8471, 978.2372)
+polygons = [PackedInt32Array(17, 1, 0, 16), PackedInt32Array(17, 14, 15, 16), PackedInt32Array(17, 18, 13, 14), PackedInt32Array(17, 1, 2, 18), PackedInt32Array(18, 2, 3, 19), PackedInt32Array(18, 13, 12, 19), PackedInt32Array(19, 21, 11, 12), PackedInt32Array(21, 4, 3, 19), PackedInt32Array(21, 20, 11), PackedInt32Array(5, 20, 21, 4), PackedInt32Array(20, 22, 10, 11), PackedInt32Array(20, 5, 6, 22), PackedInt32Array(22, 10, 9, 23), PackedInt32Array(23, 8, 9), PackedInt32Array(23, 7, 8), PackedInt32Array(23, 22, 6, 7)]
+bones = ["B_Root", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL", PackedFloat32Array(0.96, 0.48, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.48, 0.96, 0.96, 0.48, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L", PackedFloat32Array(0.03999999, 0.52, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0.52, 1, 1, 0.52, 0.03999999, 0.03999999, 0.52, 1, 1, 0, 0.48, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L/B_FootL", PackedFloat32Array(0, 0, 0, 0.03999999, 1, 1, 1, 1, 1, 1, 1, 0.52, 0.03999999, 0, 0, 0, 0, 0, 0, 0, 1, 0.48, 1, 1), "B_Root/B_Leg1R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R/B_FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+internal_vertex_count = 7
+
+[node name="ArmR" type="Polygon2D" parent="ActiveRagdoll/CharacterMeshHolder" unique_id=1999664198]
+position = Vector2(-226.47318, -239.10623)
+scale = Vector2(0.45054623, 0.45054623)
+texture = ExtResource("5_y4thy")
+skeleton = NodePath("../../SkeletonHolder/Skeleton2D")
+polygon = PackedVector2Array(373.64935, 397.44412, 345.15973, 428.07047, 327.35373, 448.01318, 309.5477, 480.06403, 304.562, 517.1005, 299.57635, 549.15137, 291.7417, 580.4899, 293.16617, 625.3611, 306.69876, 647.44055, 341.59854, 651.714, 370.80038, 651.0017, 385.0452, 626.7856, 388.6064, 586.90015, 397.86554, 552.7125, 392.1676, 519.23724, 404.2757, 497.87006, 410.68585, 468.66818, 426.35516, 448.01318, 410.68585, 410.97668)
+uv = PackedVector2Array(373.64935, 397.44412, 345.15973, 428.07047, 327.35373, 448.01318, 309.5477, 480.06403, 304.562, 517.1005, 299.57635, 549.15137, 291.7417, 580.4899, 293.16617, 625.3611, 306.69876, 647.44055, 341.59854, 651.714, 370.80038, 651.0017, 385.0452, 626.7856, 388.6064, 586.90015, 397.86554, 552.7125, 392.1676, 519.23724, 404.2757, 497.87006, 410.68585, 468.66818, 426.35516, 448.01318, 410.68585, 410.97668)
+bones = ["B_Root", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "B_Root/B_Leg1L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L/B_FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R/B_FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="GloveR" type="Polygon2D" parent="ActiveRagdoll/CharacterMeshHolder" unique_id=110729685]
+position = Vector2(-228.47313, -257.10626)
+scale = Vector2(0.45054623, 0.45054623)
+texture = ExtResource("5_y4thy")
+skeleton = NodePath("../../SkeletonHolder/Skeleton2D")
+polygon = PackedVector2Array(296.41205, 655.5475, 295.6173, 689.72076, 299.59094, 719.9204, 294.02783, 759.65686, 307.5382, 793.0354, 336.94318, 800.188, 354.4272, 788.267, 353.63245, 773.16724, 367.93756, 758.8621, 369.52704, 715.1521, 379.85846, 688.926, 384.62683, 654.75275, 352.04297, 649.18964)
+uv = PackedVector2Array(296.41205, 655.5475, 295.6173, 689.72076, 299.59094, 719.9204, 294.02783, 759.65686, 307.5382, 793.0354, 336.94318, 800.188, 354.4272, 788.267, 353.63245, 773.16724, 367.93756, 758.8621, 369.52704, 715.1521, 379.85846, 688.926, 384.62683, 654.75275, 352.04297, 649.18964)
+bones = ["B_Root", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "B_Root/B_Leg1L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L/B_FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R/B_FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="GloveL" type="Polygon2D" parent="ActiveRagdoll/CharacterMeshHolder" unique_id=2025846277]
+position = Vector2(-260.47314, -179.10628)
+scale = Vector2(0.45054623, 0.45054623)
+texture = ExtResource("5_y4thy")
+skeleton = NodePath("../../SkeletonHolder/Skeleton2D")
+polygon = PackedVector2Array(658.16516, 498.29578, 656.04956, 534.2604, 666.6274, 556.4739, 676.14746, 578.68726, 675.08966, 607.24744, 686.7253, 619.9408, 696.2453, 638.98096, 720.57434, 635.80756, 737.49884, 610.4208, 744.9033, 571.28284, 737.49884, 541.66486, 745.9611, 526.8559, 736.4411, 494.06464, 697.3031, 494.06464)
+uv = PackedVector2Array(658.16516, 498.29578, 656.04956, 534.2604, 666.6274, 556.4739, 676.14746, 578.68726, 675.08966, 607.24744, 686.7253, 619.9408, 696.2453, 638.98096, 720.57434, 635.80756, 737.49884, 610.4208, 744.9033, 571.28284, 737.49884, 541.66486, 745.9611, 526.8559, 736.4411, 494.06464, 697.3031, 494.06464)
+bones = ["B_Root", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "B_Root/B_Leg1L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L/B_FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R/B_FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="ArmL" type="Polygon2D" parent="ActiveRagdoll/CharacterMeshHolder" unique_id=1604879947]
+position = Vector2(-258.47314, -135.10626)
+scale = Vector2(0.45054623, 0.45054623)
+texture = ExtResource("5_y4thy")
+skeleton = NodePath("../../SkeletonHolder/Skeleton2D")
+polygon = PackedVector2Array(614.40436, 198.58334, 623.8974, 243.67508, 646.44324, 266.22098, 642.88336, 300.6331, 639.3235, 336.23184, 654.74963, 357.5911, 659.49615, 401.49622, 668.98914, 444.21472, 693.90826, 472.6937, 731, 451, 727, 413, 736.6268, 365.89746, 733.0669, 335.0452, 739, 288.76685, 729.507, 242.48846, 727.1337, 205.7031, 701.028, 174.85083, 658.3095, 149.93172, 620.3375, 167.7311)
+uv = PackedVector2Array(614.40436, 198.58334, 623.8974, 243.67508, 646.44324, 266.22098, 642.88336, 300.6331, 639.3235, 336.23184, 654.74963, 357.5911, 659.49615, 401.49622, 668.98914, 444.21472, 693.90826, 472.6937, 734.2535, 454.89435, 786.465, 466.7606, 827.9969, 475.06696, 868.3421, 478.62683, 906.31415, 477.44022, 911.0606, 453.7077, 861.22235, 433.5351, 822.0638, 420.4822, 775.7854, 407.42932, 734.2535, 400.30957, 736.6268, 365.89746, 733.0669, 335.0452, 739, 288.76685, 729.507, 242.48846, 727.1337, 205.7031, 701.028, 174.85083, 658.3095, 149.93172, 620.3375, 167.7311)
+bones = ["B_Root", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "B_Root/B_Leg1L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L/B_FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R/B_FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
 [node name="SkeletonHolder" type="Node2D" parent="ActiveRagdoll" unique_id=1141828985]
 unique_name_in_owner = true
 
@@ -135,17 +281,17 @@ modification_stack = SubResource("SkeletonModificationStack2D_p52qu")
 unique_name_in_owner = true
 rest = Transform2D(1, 0, 0, 1, 0, 0)
 script = ExtResource("3_ym8rp")
-rotation_stiffness = 50000.0
 rotation_damping = 300.0
 mass = 0.1
-position_damping = 0.2
+constant_force = Vector2(0.01, -0.05)
+position_damping = 5.0
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 
 [node name="B_Leg1L" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root" unique_id=83520889]
 unique_name_in_owner = true
-position = Vector2(10, 46)
-scale = Vector2(0.99970895, 0.99970895)
-rest = Transform2D(1, 0, 0, 1, 0, 22)
+position = Vector2(17, 46)
+scale = Vector2(0.99967897, 0.99967897)
+rest = Transform2D(0.99921477, 0.030475797, -0.030475797, 0.99921477, 17, 46)
 script = ExtResource("3_ym8rp")
 layer = 2
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
@@ -156,18 +302,18 @@ unique_name_in_owner = true
 position = Vector2(2.8088639, 40.959663)
 rotation = -0.00028013464
 scale = Vector2(1.0003452, 1.0003452)
-rest = Transform2D(1, 0, 0, 1, 0, 41)
+rest = Transform2D(1.0003965, -0.014268167, 0.014268167, 1.0003965, 2.8104992, 40.97078)
 script = ExtResource("3_ym8rp")
 layer = 2
-position_stiffness = 0.0
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 metadata/_local_pose_override_enabled_ = true
 
 [node name="B_Leg2L" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root/B_Leg1L/B_kneeL" unique_id=235752720]
 unique_name_in_owner = true
 position = Vector2(0, 46)
-rest = Transform2D(1, 0, 0, 1, 0, 50)
+rest = Transform2D(0.99986035, 2.9768795e-05, -2.9768795e-05, 0.99986035, -0.0004787445, 45.97838)
 script = ExtResource("3_ym8rp")
+shape_override = SubResource("CapsuleShape2D_i0y0a")
 mass = 0.2
 layer = 2
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
@@ -178,23 +324,19 @@ unique_name_in_owner = true
 position = Vector2(0, 50)
 rest = Transform2D(1, 0, 0, 1, 0, 50)
 auto_calculate_length_and_angle = false
-length = 30.0
+length = 44.096
 bone_angle = 0.0
 script = ExtResource("3_ym8rp")
-shape_override = SubResource("CircleShape2D_nw7kw")
+shape_override = SubResource("RectangleShape2D_i0y0a")
 layer = 2
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 
-[node name="FootLTarget" type="Node2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root/B_Leg1L/B_kneeL" unique_id=1714987126]
-position = Vector2(0, 183)
-script = ExtResource("4_nw7kw")
-
 [node name="B_Leg1R" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root" unique_id=740194004]
 unique_name_in_owner = true
-position = Vector2(-9.999999, 47)
-rotation = 0.021254627
-scale = Vector2(0.9998481, 0.9998481)
-rest = Transform2D(1, 0, 0, 1, 0, 22)
+position = Vector2(-17, 47)
+rotation = 0.032650333
+scale = Vector2(0.99994403, 0.99994403)
+rest = Transform2D(0.99944514, 0.031448055, -0.031448055, 0.99944514, -17, 47)
 script = ExtResource("3_ym8rp")
 layer = 3
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
@@ -205,10 +347,9 @@ unique_name_in_owner = true
 position = Vector2(2.8088613, 40.959637)
 rotation = -0.00029069587
 scale = Vector2(1.0003452, 1.0003452)
-rest = Transform2D(1, 0, 0, 1, 0, 41)
+rest = Transform2D(0.99985874, -0.0155891795, 0.0155891795, 0.99985874, 2.8112507, 40.967438)
 script = ExtResource("3_ym8rp")
 layer = 3
-position_stiffness = 0.0
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 metadata/_local_pose_override_enabled_ = true
 
@@ -216,8 +357,9 @@ metadata/_local_pose_override_enabled_ = true
 unique_name_in_owner = true
 position = Vector2(6.198883e-06, 46.000298)
 scale = Vector2(0.99999547, 0.99999547)
-rest = Transform2D(1, 0, 0, 1, 0, 50)
+rest = Transform2D(0.9997838, -2.1204352e-05, 2.1204352e-05, 0.9997838, 0.00024318695, 45.997726)
 script = ExtResource("3_ym8rp")
+shape_override = SubResource("CapsuleShape2D_6vf32")
 mass = 0.2
 layer = 3
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
@@ -228,10 +370,11 @@ unique_name_in_owner = true
 position = Vector2(0, 50)
 rest = Transform2D(1, 0, 0, 1, 0, 50)
 auto_calculate_length_and_angle = false
-length = 30.0
-bone_angle = 180.0
+length = 40.069
+bone_angle = 0.0
 script = ExtResource("3_ym8rp")
-shape_override = SubResource("CircleShape2D_nw7kw")
+shape_override = SubResource("RectangleShape2D_y4thy")
+rotation_stiffness = 12000.0
 layer = 3
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 
@@ -250,12 +393,12 @@ position = Vector2(-94, 116)
 
 [node name="FootLTarget" type="Node2D" parent="ActiveRagdoll/SkeletonHolder/IKTargets" unique_id=1016009318]
 unique_name_in_owner = true
-position = Vector2(10, 183)
+position = Vector2(17, 183)
 script = ExtResource("4_nw7kw")
 
 [node name="FootRTarget" type="Node2D" parent="ActiveRagdoll/SkeletonHolder/IKTargets" unique_id=484511114]
 unique_name_in_owner = true
-position = Vector2(-10, 184)
+position = Vector2(-17, 184)
 script = ExtResource("4_nw7kw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2022292459]

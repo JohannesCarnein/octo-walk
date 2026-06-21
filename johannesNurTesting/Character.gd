@@ -6,6 +6,7 @@ extends Node2D
 @export var move_speed: float = 800
 @export var time_till_max_strength: float = 3
 
+@export var willingness_to_move_right: float = 3
 @export var cam: Camera2D
 
 var jump_boost:float = 1
@@ -46,7 +47,7 @@ func _physics_process(delta: float) -> void:
 		_time_under_tension -= delta * 3
 	var center_of_mass: Vector2 = %ActiveRagdoll.get_center_of_mass()
 	var skeleton_pos: Vector2 = %SkeletonHolder.global_position
-	var character_move: Vector2 = lerp(skeleton_pos, center_of_mass + Vector2.UP * 100 * jump_boost, clamp(0.5 * delta, 0, 1))
+	var character_move: Vector2 = lerp(skeleton_pos, center_of_mass + Vector2.UP * 150 * jump_boost, clamp(willingness_to_move_right * delta, 0, 1))
 	%SkeletonHolder.global_position = character_move + (jump_boost - 1) * Vector2(10,5)
 	if cam:
 		cam.global_position = center_of_mass
@@ -77,9 +78,11 @@ func jump() -> void:
 		jump_tween1 = create_tween()
 		jump_tween1.tween_property(%StepTargets, "position", Vector2(-200, 200), 0.1)
 		jump_tween1.tween_property(%StepTargets, "position", Vector2.ZERO, 0.2)
-		%ActiveRagdoll.bone_to_body[%B_FootL].apply_impulse(Vector2(50, -200))
-		%ActiveRagdoll.bone_to_body[%B_FootR].apply_impulse(Vector2(50, -200))
-		%ActiveRagdoll.bone_to_body[%B_Root].apply_impulse(Vector2(250, 0))
+		%ActiveRagdoll.bone_to_body[%B_FootL].apply_impulse(Vector2(200, -400))
+		%ActiveRagdoll.bone_to_body[%B_FootR].apply_impulse(Vector2(200, -400))
+		%ActiveRagdoll.bone_to_body[%B_kneeL].apply_impulse(Vector2(500, -400))
+		%ActiveRagdoll.bone_to_body[%B_kneeR].apply_impulse(Vector2(500, -400))
+		%ActiveRagdoll.bone_to_body[%B_Root].apply_impulse(Vector2(450, -200))
 	elif jump_tween1.is_running():
 		pass
 	else:

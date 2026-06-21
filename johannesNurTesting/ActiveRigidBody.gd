@@ -14,12 +14,15 @@ var impact_vfx: ImpactVFX
 var bone: Bone2D
 var skeleton: Skeleton2D
 var collisionShape: CollisionShape2D
+var remote_transform: RemoteTransform2D
 
 var _mad: float = 5
 var _mid: float = 1
 
 var _mas: float = 1
 var _mis: float = 0.2
+
+var constant_force_bonus: Vector2 = Vector2.ZERO
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	var contact_count = state.get_contact_count()
@@ -45,13 +48,19 @@ func _init(b: MetaBone, skel: Skeleton2D) -> void:
 	mass = b.mass
 	set_collision_layer_value(1, false)
 	set_collision_layer_value(b.layer, true)
-	
+	remote_transform = RemoteTransform2D.new()
+	constant_force_bonus = b.constant_force
+
+func register_as_follower_bone(b: Bone2D) -> void:
+	remote_transform.remote_path = b.get_path()
 	
 
 func _ready() -> void:
 	add_child(collisionShape)
+	add_child(remote_transform)
 	impact_vfx = _impact_vfx_scene.instantiate()
 	add_child(impact_vfx)
+	add_constant_force(constant_force_bonus)
 
 func _physics_process(delta: float) -> void:
 	_follow_bone()
@@ -68,14 +77,12 @@ func get_stiffness_mult() -> float:
 	
 func _draw():
 	debug_draw_target()
-	draw_set_transform(to_local(bone.global_position), -global_rotation, Vector2.ONE)
-	draw_string(ThemeDB.fallback_font, Vector2.ZERO, str(snapped(get_damping_mult(), 0.1)))
+	#draw_set_transform(to_local(bone.global_position), -global_rotation, Vector2.ONE)
+	#draw_string(ThemeDB.fallback_font, Vector2.ZERO, str(snapped(get_damping_mult(), 0.1)))
 
 func _get_target_transform() -> Transform2D:
 	return bone.global_transform
-	
-func _get_target_tip_position() -> Vector2:
-	return Vector2(0, bone.get_length() / 2.0).rotated(bone.get_bone_angle())
+
 	
 func _get_target_rotation() -> float:
 	var local_rotation = bone.rotation
@@ -97,6 +104,10 @@ func _follow_bone() -> void:
 	var force := (pos_delta * position_stiffness * get_stiffness_mult()) - (linear_velocity * position_damping)
 	
 	apply_force(force)
+	
+	
+func _get_target_tip_position() -> Vector2:
+	return to_local(bone.global_position + Vector2(0, bone.get_length() / 2.0).rotated(deg_to_rad(180)))
 	
 func debug_draw_target() -> void:
 	draw_circle(_get_target_tip_position(), 5, Color.RED)

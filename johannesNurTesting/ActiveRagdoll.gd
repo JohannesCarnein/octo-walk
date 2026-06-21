@@ -3,24 +3,42 @@ extends Node2D
 
 signal on_impact(impact_strength: float)
 
-@onready var skeleton: Skeleton2D = %Skeleton2D
-@onready var ragdoll: Node2D
+@onready var controll_skeleton: Skeleton2D = %Skeleton2D
+@onready var character_mesh_holder:= %CharacterMeshHolder
+var deform_skeleton: Skeleton2D
+var ragdoll: Node2D
 
 var bone_to_body: Dictionary[Bone2D, ActiveRigidBody] = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	deform_skeleton = controll_skeleton.duplicate()
+	add_child(deform_skeleton)
+	reparent_mesh()
 	ragdoll = Node2D.new()
 	add_child(ragdoll)
 	build_ragdoll()
+	setup_deform_skeleton()
+	
+func setup_deform_skeleton() -> void:
+	for i in range(deform_skeleton.get_bone_count()):
+		bone_to_body[controll_skeleton.get_bone(i)].register_as_follower_bone(deform_skeleton.get_bone(i))
+
+func reparent_mesh() -> void:
+	for polygon in character_mesh_holder.get_children():
+		if polygon is Polygon2D:
+			polygon.skeleton = deform_skeleton.get_path()
+			for subpol in polygon.get_children():
+				if subpol is Polygon2D:
+					subpol.skeleton = deform_skeleton.get_path()
 
 func build_ragdoll() -> void:
-	for child in skeleton.get_children():
+	for child in controll_skeleton.get_children():
 		if child is MetaBone:
 			_process_bone(child, null)
 
 func _process_bone(bone: MetaBone, parent_body: ActiveRigidBody) -> void:
-	var body := ActiveRigidBody.new(bone, skeleton)
+	var body := ActiveRigidBody.new(bone, controll_skeleton)
 	bone_to_body[bone] = body
 
 	if parent_body == null:
@@ -43,6 +61,7 @@ func handle_collision(impact_strength: float) -> void:
 
 func _connect_bodies(parent_body: ActiveRigidBody, child_body: ActiveRigidBody) -> void:
 	var joint := RapierPinJoint2D.new()
+	#joint.motor_position_damping = 1
 	parent_body.add_child(joint)
 	joint.global_position = child_body.bone.global_position
 	joint.node_a = parent_body.get_path()
@@ -57,4 +76,5 @@ func get_center_of_mass() -> Vector2:
 		if body.global_position.x > furthes:
 			furthes = body.global_position.x
 		i += 1
-	return com / i
+	var avr: Vector2 = com / i
+	return lerp(avr, Vector2(furthes, avr.y), 0.7)
