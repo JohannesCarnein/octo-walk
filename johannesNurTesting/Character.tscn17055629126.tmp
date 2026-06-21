@@ -7,70 +7,35 @@
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_anga4"]
 target_nodepath = NodePath("../IKTargets/FootLTarget")
-tip_nodepath = NodePath("B_Root/B_Leg1L/B_kneeL/B_Leg2L/B_FootL")
+tip_nodepath = NodePath("B_Root/B_Leg1/B_knee/B_Leg3/B_Foot")
 ccdik_data_chain_length = 3
 joint_data/0/bone_index = 1
-joint_data/0/bone2d_node = NodePath("B_Root/B_Leg1L")
-joint_data/0/rotate_from_joint = false
-joint_data/0/enable_constraint = true
-joint_data/0/constraint_angle_min = -203.99998
-joint_data/0/constraint_angle_max = 207.99998
-joint_data/0/constraint_angle_invert = true
-joint_data/0/constraint_in_localspace = true
-joint_data/0/editor_draw_gizmo = true
-joint_data/1/bone_index = 2
-joint_data/1/bone2d_node = NodePath("B_Root/B_Leg1L/B_kneeL")
-joint_data/1/rotate_from_joint = false
-joint_data/1/enable_constraint = true
-joint_data/1/constraint_angle_min = -161.163
-joint_data/1/constraint_angle_max = 154.884
-joint_data/1/constraint_angle_invert = true
-joint_data/1/constraint_in_localspace = true
-joint_data/1/editor_draw_gizmo = true
-joint_data/2/bone_index = 3
-joint_data/2/bone2d_node = NodePath("B_Root/B_Leg1L/B_kneeL/B_Leg2L")
-joint_data/2/rotate_from_joint = false
-joint_data/2/enable_constraint = true
-joint_data/2/constraint_angle_min = -194.65099
-joint_data/2/constraint_angle_max = 194.65099
-joint_data/2/constraint_angle_invert = true
-joint_data/2/constraint_in_localspace = true
-joint_data/2/editor_draw_gizmo = true
-
-[sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_nw7kw"]
-target_nodepath = NodePath("../IKTargets/FootRTarget")
-tip_nodepath = NodePath("B_Root/B_Leg1R/B_kneeR/B_Leg2R/B_FootR")
-ccdik_data_chain_length = 3
-joint_data/0/bone_index = 5
-joint_data/0/bone2d_node = NodePath("B_Root/B_Leg1R")
+joint_data/0/bone2d_node = NodePath("B_Root/B_Leg1")
 joint_data/0/rotate_from_joint = false
 joint_data/0/enable_constraint = false
 joint_data/0/editor_draw_gizmo = true
-joint_data/1/bone_index = 6
-joint_data/1/bone2d_node = NodePath("B_Root/B_Leg1R/B_kneeR")
+joint_data/1/bone_index = 2
+joint_data/1/bone2d_node = NodePath("B_Root/B_Leg1/B_knee")
 joint_data/1/rotate_from_joint = false
 joint_data/1/enable_constraint = false
 joint_data/1/editor_draw_gizmo = true
-joint_data/2/bone_index = 7
-joint_data/2/bone2d_node = NodePath("B_Root/B_Leg1R/B_kneeR/B_Leg2R")
+joint_data/2/bone_index = 3
+joint_data/2/bone2d_node = NodePath("B_Root/B_Leg1/B_knee/B_Leg3")
 joint_data/2/rotate_from_joint = false
 joint_data/2/enable_constraint = false
 joint_data/2/editor_draw_gizmo = true
 
 [sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_p52qu"]
 enabled = true
-modification_count = 2
+modification_count = 1
 modifications/0 = SubResource("SkeletonModification2DCCDIK_anga4")
-modifications/1 = SubResource("SkeletonModification2DCCDIK_nw7kw")
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_nw7kw"]
 
 [sub_resource type="Animation" id="Animation_ym8rp"]
 resource_name = "MoveL"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("B_Root/B_Leg1L:rotation")
+tracks/0/path = NodePath("B_Root/B_Leg1:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -85,7 +50,7 @@ resource_name = "MoveR"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("B_Root/B_Leg1L:rotation")
+tracks/0/path = NodePath("B_Root/B_Leg1:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -100,7 +65,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("B_Root/B_Leg1L:rotation")
+tracks/0/path = NodePath("B_Root/B_Leg1:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -132,101 +97,55 @@ unique_name_in_owner = true
 modification_stack = SubResource("SkeletonModificationStack2D_p52qu")
 
 [node name="B_Root" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D" unique_id=1486953571]
-unique_name_in_owner = true
 rest = Transform2D(1, 0, 0, 1, 0, 0)
 script = ExtResource("3_ym8rp")
 rotation_stiffness = 50000.0
 rotation_damping = 300.0
-mass = 0.1
 position_stiffness = 1.0
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 
-[node name="B_Leg1L" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root" unique_id=83520889]
+[node name="B_Leg1" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root" unique_id=83520889]
 unique_name_in_owner = true
-position = Vector2(8, 46)
-scale = Vector2(0.9997269, 0.9997269)
+position = Vector2(0, 46)
+scale = Vector2(0.9998274, 0.9998274)
 rest = Transform2D(1, 0, 0, 1, 0, 22)
 script = ExtResource("3_ym8rp")
+rotation_stiffness = 60000.0
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 metadata/_local_pose_override_enabled_ = true
 
-[node name="B_kneeL" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root/B_Leg1L" unique_id=195879404]
+[node name="B_knee" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root/B_Leg1" unique_id=195879404]
 unique_name_in_owner = true
 position = Vector2(2.8088639, 40.959663)
-rotation = -0.00028013464
+rotation = -0.0002801346
 scale = Vector2(1.0003452, 1.0003452)
 rest = Transform2D(1, 0, 0, 1, 0, 41)
 script = ExtResource("3_ym8rp")
+rotation_stiffness = 80000.0
 position_stiffness = 0.0
-position_damping = 0.5
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 metadata/_local_pose_override_enabled_ = true
 
-[node name="B_Leg2L" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root/B_Leg1L/B_kneeL" unique_id=235752720]
+[node name="B_Leg3" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root/B_Leg1/B_knee" unique_id=235752720]
 unique_name_in_owner = true
 position = Vector2(0, 46)
 rest = Transform2D(1, 0, 0, 1, 0, 50)
 script = ExtResource("3_ym8rp")
-mass = 0.2
+position_stiffness = 0.0
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 metadata/_local_pose_override_enabled_ = true
 
-[node name="B_FootL" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root/B_Leg1L/B_kneeL/B_Leg2L" unique_id=1259370162]
-unique_name_in_owner = true
+[node name="B_Foot" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root/B_Leg1/B_knee/B_Leg3" unique_id=1259370162]
 position = Vector2(0, 50)
 rest = Transform2D(1, 0, 0, 1, 0, 50)
 auto_calculate_length_and_angle = false
 length = 30.0
 bone_angle = 0.0
-script = ExtResource("3_ym8rp")
-shape_override = SubResource("CircleShape2D_nw7kw")
-metadata/_custom_type_script = "uid://bqj3bqscufuvx"
-
-[node name="B_Leg1R" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root" unique_id=740194004]
-unique_name_in_owner = true
-position = Vector2(-6.9999995, 47)
-rotation = 0.020707369
-scale = Vector2(0.9998274, 0.9998274)
-rest = Transform2D(1, 0, 0, 1, 0, 22)
-script = ExtResource("3_ym8rp")
-metadata/_custom_type_script = "uid://bqj3bqscufuvx"
-metadata/_local_pose_override_enabled_ = true
-
-[node name="B_kneeR" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root/B_Leg1R" unique_id=265606411]
-unique_name_in_owner = true
-position = Vector2(2.8088613, 40.959637)
-rotation = -0.00029069587
-scale = Vector2(1.0003452, 1.0003452)
-rest = Transform2D(1, 0, 0, 1, 0, 41)
 script = ExtResource("3_ym8rp")
 position_stiffness = 0.0
-position_damping = 0.5
-metadata/_custom_type_script = "uid://bqj3bqscufuvx"
-metadata/_local_pose_override_enabled_ = true
-
-[node name="B_Leg2R" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root/B_Leg1R/B_kneeR" unique_id=222159883]
-unique_name_in_owner = true
-position = Vector2(6.198883e-06, 46.000298)
-scale = Vector2(0.99999547, 0.99999547)
-rest = Transform2D(1, 0, 0, 1, 0, 50)
-script = ExtResource("3_ym8rp")
-mass = 0.2
-metadata/_custom_type_script = "uid://bqj3bqscufuvx"
-metadata/_local_pose_override_enabled_ = true
-
-[node name="B_FootR" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root/B_Leg1R/B_kneeR/B_Leg2R" unique_id=1724180832]
-unique_name_in_owner = true
-position = Vector2(0, 50)
-rest = Transform2D(1, 0, 0, 1, 0, 50)
-auto_calculate_length_and_angle = false
-length = 30.0
-bone_angle = 0.0
-script = ExtResource("3_ym8rp")
-shape_override = SubResource("CircleShape2D_nw7kw")
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 
 [node name="StepTargets" type="Node2D" parent="ActiveRagdoll/SkeletonHolder" unique_id=1994465088]
-unique_name_in_owner = true
 
 [node name="StepTargetR" type="Node2D" parent="ActiveRagdoll/SkeletonHolder/StepTargets" unique_id=1442761209]
 unique_name_in_owner = true
@@ -240,12 +159,7 @@ position = Vector2(-94, 116)
 
 [node name="FootLTarget" type="Node2D" parent="ActiveRagdoll/SkeletonHolder/IKTargets" unique_id=1016009318]
 unique_name_in_owner = true
-position = Vector2(8, 183)
-script = ExtResource("4_nw7kw")
-
-[node name="FootRTarget" type="Node2D" parent="ActiveRagdoll/SkeletonHolder/IKTargets" unique_id=484511114]
-unique_name_in_owner = true
-position = Vector2(-7, 184)
+position = Vector2(0, 183)
 script = ExtResource("4_nw7kw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2022292459]
