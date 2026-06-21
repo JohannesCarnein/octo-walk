@@ -7,7 +7,12 @@ extends Node2D
 @export var time_till_max_strength: float = 3
 
 @export var willingness_to_move_right: float = 3
-@export var cam: Camera2D
+@export var follower: Node2D
+
+# TODO
+@onready var audio_steps: AudioStreamPlayer2D = %AudioStreamSteps
+@onready var audio_armor: AudioStreamPlayer2D = %AudioStreamArmor
+
 
 var jump_boost:float = 1
 var jump_tween1: Tween
@@ -31,15 +36,19 @@ func _physics_process(delta: float) -> void:
 	if Input.is_key_pressed(KEY_Q):
 		Lstep_left(strength)
 		moved = true
+		audio_steps.play()
 	if Input.is_key_pressed(KEY_W):
 		Lstep_right(strength)
 		moved = true
+		audio_steps.play()
 	if Input.is_key_pressed(KEY_O):
 		Rstep_left(strength)
 		moved = true
+		audio_steps.play()
 	if Input.is_key_pressed(KEY_P):
 		Rstep_right(strength)
 		moved = true
+		audio_steps.play()
 	prevent_inverted_knee(delta * 0.2)
 	if moved:
 		_time_under_tension += delta
@@ -49,8 +58,7 @@ func _physics_process(delta: float) -> void:
 	var skeleton_pos: Vector2 = %SkeletonHolder.global_position
 	var character_move: Vector2 = lerp(skeleton_pos, center_of_mass + Vector2.UP * 150 * jump_boost, clamp((willingness_to_move_right + get_mapped_tut() * 5) * delta, 0, 1))
 	%SkeletonHolder.global_position = character_move + (jump_boost - 1) * Vector2(10,5)
-	if cam:
-		cam.global_position = center_of_mass
+	follower.global_position = center_of_mass
 		
 func get_mapped_tut() -> float:
 	return remap(_time_under_tension, 0, time_till_max_strength, 0, 1)
@@ -72,6 +80,7 @@ func _input(event):
 			play_anim("MoveR")
 		if event.keycode == KEY_SPACE:
 			jump()
+			audio_steps.play()
 
 func jump() -> void:
 	if !jump_tween1:

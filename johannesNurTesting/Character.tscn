@@ -6,6 +6,19 @@
 [ext_resource type="Script" uid="uid://cc6ircdlh5n7d" path="res://johannesNurTesting/Retractable.gd" id="4_nw7kw"]
 [ext_resource type="Texture2D" uid="uid://djyj640rv5ikr" path="res://assets/octopus.png" id="5_y4thy"]
 [ext_resource type="Shader" uid="uid://djjpys0avd2s5" path="res://shader/tentacle.gdshader" id="6_i0y0a"]
+[ext_resource type="AudioStream" uid="uid://ckg0dj6ueri3h" path="res://assets/sounds/steps/Step Complete-01.wav" id="7_igwht"]
+[ext_resource type="AudioStream" uid="uid://cy602lplxl8xo" path="res://assets/sounds/steps/Step Complete-02.wav" id="8_n8yq1"]
+[ext_resource type="AudioStream" uid="uid://mb36wst2c2vh" path="res://assets/sounds/steps/Step Complete-03.wav" id="9_cc5iu"]
+[ext_resource type="AudioStream" uid="uid://bep2frllhxsjm" path="res://assets/sounds/steps/Step Complete-04.wav" id="10_r4bnf"]
+[ext_resource type="AudioStream" uid="uid://dwmf85ovfm3s5" path="res://assets/sounds/steps/Step Complete-05.wav" id="11_cetqi"]
+[ext_resource type="AudioStream" uid="uid://dxiuabmivsntg" path="res://assets/sounds/steps/Step Complete-06.wav" id="12_328gr"]
+[ext_resource type="AudioStream" uid="uid://beemetvaj4kh" path="res://assets/sounds/steps/Step Complete-07.wav" id="13_ex143"]
+[ext_resource type="AudioStream" uid="uid://ccty2g47m7t4v" path="res://assets/sounds/steps/Step Complete-08.wav" id="14_fhnu3"]
+[ext_resource type="AudioStream" uid="uid://dm1fwdya056w5" path="res://assets/sounds/steps/Step Complete-09.wav" id="15_tcm2f"]
+[ext_resource type="AudioStream" uid="uid://bsxdaycldour6" path="res://assets/sounds/steps/Step Complete-10.wav" id="16_cnqhq"]
+[ext_resource type="AudioStream" uid="uid://crbqaibiadlqj" path="res://assets/sounds/armor/Armor Movement-001-001.wav" id="17_ap5kp"]
+[ext_resource type="AudioStream" uid="uid://bq244dx4w4gsw" path="res://assets/sounds/armor/Armor Movement-001-002.wav" id="18_j80xt"]
+[ext_resource type="AudioStream" uid="uid://cbex7qn0qkvd0" path="res://assets/sounds/armor/Armor Movement-001-003.wav" id="19_v5nq0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4sjkn"]
 shader = ExtResource("6_i0y0a")
@@ -21,8 +34,8 @@ joint_data/0/bone_index = 1
 joint_data/0/bone2d_node = NodePath("B_Root/B_Leg1L")
 joint_data/0/rotate_from_joint = false
 joint_data/0/enable_constraint = true
-joint_data/0/constraint_angle_min = -203.99998
-joint_data/0/constraint_angle_max = 207.99998
+joint_data/0/constraint_angle_min = -203.99997
+joint_data/0/constraint_angle_max = 207.99997
 joint_data/0/constraint_angle_invert = true
 joint_data/0/constraint_in_localspace = true
 joint_data/0/editor_draw_gizmo = true
@@ -39,8 +52,8 @@ joint_data/2/bone_index = 3
 joint_data/2/bone2d_node = NodePath("B_Root/B_Leg1L/B_kneeL/B_Leg2L")
 joint_data/2/rotate_from_joint = false
 joint_data/2/enable_constraint = true
-joint_data/2/constraint_angle_min = -194.65099
-joint_data/2/constraint_angle_max = 194.65099
+joint_data/2/constraint_angle_min = -194.65097
+joint_data/2/constraint_angle_max = 194.65097
 joint_data/2/constraint_angle_invert = true
 joint_data/2/constraint_in_localspace = true
 joint_data/2/editor_draw_gizmo = true
@@ -135,6 +148,25 @@ _data = {
 &"RESET": SubResource("Animation_qmprm")
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2d1mq"]
+streams_count = 10
+stream_0/stream = ExtResource("7_igwht")
+stream_1/stream = ExtResource("8_n8yq1")
+stream_2/stream = ExtResource("9_cc5iu")
+stream_3/stream = ExtResource("10_r4bnf")
+stream_4/stream = ExtResource("11_cetqi")
+stream_5/stream = ExtResource("12_328gr")
+stream_6/stream = ExtResource("13_ex143")
+stream_7/stream = ExtResource("14_fhnu3")
+stream_8/stream = ExtResource("15_tcm2f")
+stream_9/stream = ExtResource("16_cnqhq")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_euxyq"]
+streams_count = 3
+stream_0/stream = ExtResource("17_ap5kp")
+stream_1/stream = ExtResource("18_j80xt")
+stream_2/stream = ExtResource("19_v5nq0")
+
 [node name="Character" type="Node2D" unique_id=1601456253]
 script = ExtResource("1_ym8rp")
 
@@ -144,6 +176,14 @@ script = ExtResource("3_nw7kw")
 
 [node name="CharacterMeshHolder" type="Node2D" parent="ActiveRagdoll" unique_id=14187304]
 unique_name_in_owner = true
+
+[node name="Helmet" type="Polygon2D" parent="ActiveRagdoll/CharacterMeshHolder" unique_id=432115562]
+visible = false
+position = Vector2(-221.00002, -181)
+scale = Vector2(0.4010576, 0.4010576)
+texture = ExtResource("5_y4thy")
+polygon = PackedVector2Array(509.5324, 277.4154, 469.13678, 294.66296, 437.81885, 273.33044, 382.89896, 260.16785, 327.9792, 212.05605, 323.44037, 147.15073, 347.04025, 74.0762, 380.62762, 50.020386, 479.57422, 56.828636, 533.13245, 106.7558, 562.1809, 173.47702, 553.55853, 220.22769)
+uv = PackedVector2Array(509.5324, 277.4154, 469.13678, 294.66296, 437.81885, 273.33044, 382.89896, 260.16785, 327.9792, 212.05605, 323.44037, 147.15073, 347.04025, 74.0762, 380.62762, 50.020386, 479.57422, 56.828636, 533.13245, 106.7558, 562.1809, 173.47702, 553.55853, 220.22769)
 
 [node name="TentacleR" type="Polygon2D" parent="ActiveRagdoll/CharacterMeshHolder" unique_id=1347171843]
 visible = false
@@ -184,13 +224,6 @@ skeleton = NodePath("../../../SkeletonHolder/Skeleton2D")
 polygon = PackedVector2Array(132.96936, 73.19352, 109.74082, 81.45256, 85.4799, 83.51732, 81.86657, 108.810616, 110.25701, 133.07155, 133.48553, 164.55913, 171.16739, 192.43338, 225.36734, 198.62766, 268.72726, 184.17433, 293.5044, 149.07343, 301.24722, 106.22967, 285.76154, 81.96875, 267.6949, 77.83923, 249.62827, 64.4183, 214.52734, 65.450676, 161.87598, 62.35354)
 uv = PackedVector2Array(132.96936, 73.19352, 109.74082, 81.45256, 85.4799, 83.51732, 81.86657, 108.810616, 110.25701, 133.07155, 133.48553, 164.55913, 171.16739, 192.43338, 225.36734, 198.62766, 268.72726, 184.17433, 293.5044, 149.07343, 301.24722, 106.22967, 285.76154, 81.96875, 267.6949, 77.83923, 249.62827, 64.4183, 214.52734, 65.450676, 161.87598, 62.35354)
 bones = ["B_Root", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "B_Root/B_Leg1L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1L/B_kneeL/B_Leg2L/B_FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "B_Root/B_Leg1R/B_kneeR/B_Leg2R/B_FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
-
-[node name="Helmet" type="Polygon2D" parent="ActiveRagdoll/CharacterMeshHolder" unique_id=432115562]
-visible = false
-position = Vector2(94, -82)
-texture = ExtResource("5_y4thy")
-polygon = PackedVector2Array(509.5324, 277.4154, 469.13678, 294.66296, 437.81885, 273.33044, 382.89896, 260.16785, 327.9792, 212.05605, 323.44037, 147.15073, 347.04025, 74.0762, 380.62762, 50.020386, 479.57422, 56.828636, 533.13245, 106.7558, 562.1809, 173.47702, 553.55853, 220.22769)
-uv = PackedVector2Array(509.5324, 277.4154, 469.13678, 294.66296, 437.81885, 273.33044, 382.89896, 260.16785, 327.9792, 212.05605, 323.44037, 147.15073, 347.04025, 74.0762, 380.62762, 50.020386, 479.57422, 56.828636, 533.13245, 106.7558, 562.1809, 173.47702, 553.55853, 220.22769)
 
 [node name="LegR" type="Polygon2D" parent="ActiveRagdoll/CharacterMeshHolder" unique_id=1918483601]
 position = Vector2(-226.99998, -259.24014)
@@ -302,7 +335,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="B_kneeL" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root/B_Leg1L" unique_id=195879404]
 unique_name_in_owner = true
 position = Vector2(2.8088639, 40.959663)
-rotation = -0.00028013464
+rotation = -0.00028013467
 scale = Vector2(1.0003452, 1.0003452)
 rest = Transform2D(1.0003965, -0.014268167, 0.014268167, 1.0003965, 2.8104992, 40.97078)
 script = ExtResource("3_ym8rp")
@@ -353,7 +386,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="B_kneeR" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root/B_Leg1R" unique_id=265606411]
 unique_name_in_owner = true
 position = Vector2(2.8088613, 40.959637)
-rotation = -0.00029069587
+rotation = -0.0002906959
 scale = Vector2(1.0003452, 1.0003452)
 rest = Transform2D(0.99985874, -0.0155891795, 0.0155891795, 0.99985874, 2.8112507, 40.967438)
 script = ExtResource("3_ym8rp")
@@ -418,3 +451,13 @@ script = ExtResource("4_nw7kw")
 unique_name_in_owner = true
 root_node = NodePath("../ActiveRagdoll/SkeletonHolder/Skeleton2D")
 libraries/ = SubResource("AnimationLibrary_nw7kw")
+
+[node name="AudioStreamSteps" type="AudioStreamPlayer2D" parent="." unique_id=691384125]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_2d1mq")
+bus = &"SoundEffects"
+
+[node name="AudioStreamArmor" type="AudioStreamPlayer2D" parent="." unique_id=2017205608]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_euxyq")
+bus = &"SoundEffects"

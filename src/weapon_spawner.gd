@@ -7,7 +7,7 @@ extends Node2D
 
 const _weapon_scene := preload("uid://d2otmjno8y78b")
 
-func initialize(player: PlayerController) -> void:
+func initialize(player: Character) -> void:
 	# reparent to follow the player
 	reparent(player)
 

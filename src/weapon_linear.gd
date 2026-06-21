@@ -12,7 +12,7 @@ var velocity := Vector2.ZERO
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_variations.pick_random().show()
-	hitbox.body_entered.connect(_on_body_entered)
+	hitbox.area_entered.connect(_on_area_entered)
 
 
 func shoot_at_target(global_target_position: Vector2) -> void:
@@ -24,10 +24,10 @@ func _process(delta: float) -> void:
 	position += velocity * delta
 
 
-func _on_body_entered(body: Node2D) -> void:
-	if body is PlayerController:
+func _on_area_entered(area: Area2D) -> void:
+	if area is PlayerArea:
 		print("TODO apply impulse")
 	else:
-		printt("Weapon entered body", body)
+		printt("Weapon entered area", area)
 	queue_free()
 	# TODO
