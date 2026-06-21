@@ -8,16 +8,11 @@
 
 [node name="Main" type="Node" unique_id=1723570763]
 script = ExtResource("1_eewff")
+fade_in_out_duration = 2.0
 cutscene = ExtResource("2_3cfgd")
 menu = ExtResource("3_fyndt")
 game = ExtResource("4_kmhfv")
 end_screen = ExtResource("5_fyndt")
-
-[node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="." unique_id=1416990102]
-unique_name_in_owner = true
-
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1728222566]
-unique_name_in_owner = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=651062802]
 

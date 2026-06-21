@@ -15,10 +15,15 @@ run/main_scene="uid://b8g8obirqm7xt"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://doedrnujwe0dh"
+
 [autoload]
 
 PhantomCameraManager="*uid://duq6jhf6unyis"
 EventBus="*uid://cqvdqg5rj2d1d"
+MusicPlayer="*uid://da5sp1nmi4r6k"
 
 [display]
 

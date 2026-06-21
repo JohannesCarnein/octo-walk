@@ -3,8 +3,6 @@ extends Node2D
 
 signal finished
 
-@export var music: AudioStream
-
 @onready var player: Character = %Player
 @onready var moses: MosesController = %Moses
 
@@ -15,8 +13,6 @@ var _current_stage: StageController
 var stages: Array[StageController] = []
 
 func _ready() -> void:
-	EventBus.play_music_requested.emit(music)
-
 	moses.player_detected.connect(_on_moses_detected_player)
 	for child in %Stages.get_children():
 		if child is StageController:

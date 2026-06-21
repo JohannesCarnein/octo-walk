@@ -9,4 +9,4 @@ signal start_game_requested
 
 func _ready() -> void:
 	start_game_button.pressed.connect(start_game_requested.emit)
-	EventBus.play_music_requested.emit(music)
+	MusicPlayer.play(music)

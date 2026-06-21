@@ -17,7 +17,7 @@ func _ready() -> void:
 			scenes.append(child)
 			child.hide()
 	show_slide(scenes.pop_front())
-	EventBus.play_music_requested.emit(music)
+	MusicPlayer.play(music)
 
 func show_slide(slide: TextureRect) -> void:
 	if is_instance_valid(previous_slide):

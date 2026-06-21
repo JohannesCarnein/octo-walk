@@ -6,7 +6,7 @@ signal finished
 @export var music: AudioStream
 
 func _ready() -> void:
-	EventBus.play_music_requested.emit(music)
+	MusicPlayer.play(music)
 	grab_focus()
 
 func _input(event: InputEvent) -> void:
