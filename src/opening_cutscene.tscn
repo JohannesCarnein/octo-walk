@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cd60dntftpmxv"]
+
+[ext_resource type="Script" uid="uid://bfvujehfkki3u" path="res://cutscene_controller.gd" id="1_8kl3g"]
+[ext_resource type="Texture2D" uid="uid://crw0mgv5cfxeh" path="res://assets/sprites/cutscene/scene2.png" id="2_1ou3j"]
+[ext_resource type="Texture2D" uid="uid://cymb0bcduahkn" path="res://assets/sprites/cutscene/scene3.png" id="3_bxkdj"]
+[ext_resource type="Texture2D" uid="uid://b5msggxtvurwp" path="res://assets/sprites/cutscene/scene1.png" id="4_qusl0"]
+[ext_resource type="Texture2D" uid="uid://b8ab66re8i3s1" path="res://assets/sprites/cutscene/scene4.png" id="5_t7eqo"]
+
+[node name="Control" type="Control" unique_id=245791578]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8kl3g")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1341319488]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_1ou3j")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1397551331]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_bxkdj")
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1689593037]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_qusl0")
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=648617853]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_t7eqo")
