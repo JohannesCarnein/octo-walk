@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d618h2mg4ycb"
-path="res://.godot/imported/wetness_meter.png-4fcc242da3bc4c9d48e975c458d00caa.ctex"
+uid="uid://djyj640rv5ikr"
+path="res://.godot/imported/octopus.png-f94ed1fbd0b63817dacd17b45fd7534f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wetness_meter.png"
-dest_files=["res://.godot/imported/wetness_meter.png-4fcc242da3bc4c9d48e975c458d00caa.ctex"]
+source_file="res://assets/sprites/octopus.png"
+dest_files=["res://.godot/imported/octopus.png-f94ed1fbd0b63817dacd17b45fd7534f.ctex"]
 
 [params]
 
