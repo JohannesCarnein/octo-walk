@@ -10,8 +10,8 @@ extends Node2D
 @export var follower: Node2D
 
 # TODO
-@onready var audio_steps: AudioStreamPlayer2D = %AudioStreamSteps
-@onready var audio_armor: AudioStreamPlayer2D = %AudioStreamArmor
+@onready var audio_steps: AudioStreamPlayer = %AudioStreamSteps
+@onready var audio_armor: AudioStreamPlayer = %AudioStreamArmor
 
 
 var jump_boost:float = 1

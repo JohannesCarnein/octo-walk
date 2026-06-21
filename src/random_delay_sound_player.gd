@@ -1,4 +1,4 @@
-extends AudioStreamPlayer2D
+extends AudioStreamPlayer
 
 @export var _min_wait_time := 20.0
 @export var _max_wait_time := 40.0

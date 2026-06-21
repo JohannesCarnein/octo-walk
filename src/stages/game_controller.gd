@@ -1,6 +1,10 @@
 class_name GameController
 extends Node2D
 
+signal finished
+
+@export var music: AudioStream
+
 @onready var player: Character = %Player
 @onready var moses: MosesController = %Moses
 
@@ -11,6 +15,8 @@ var _current_stage: StageController
 var stages: Array[StageController] = []
 
 func _ready() -> void:
+	EventBus.play_music_requested.emit(music)
+
 	moses.player_detected.connect(_on_moses_detected_player)
 	for child in %Stages.get_children():
 		if child is StageController:
@@ -19,12 +25,10 @@ func _ready() -> void:
 
 func _on_moses_detected_player() -> void:
 	if stages.is_empty():
-		print("You Win!")
-		# TODO
+		await get_tree().create_timer(2.0).timeout
+		finished.emit()
 	else:
 		_start_stage(stages.pop_front())
-		print("TODO advance to next stage")
-		# make moses run to the next stage end and 
 
 func _start_stage(stage: StageController) -> void:
 	print("next stage")

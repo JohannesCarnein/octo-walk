@@ -461,10 +461,10 @@ unique_name_in_owner = true
 root_node = NodePath("../ActiveRagdoll/SkeletonHolder/Skeleton2D")
 libraries/ = SubResource("AnimationLibrary_nw7kw")
 
-[node name="AudioStreamSteps" type="AudioStreamPlayer2D" parent="." unique_id=691384125]
+[node name="AudioStreamSteps" type="AudioStreamPlayer" parent="." unique_id=833225236]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_2d1mq")
 
-[node name="AudioStreamArmor" type="AudioStreamPlayer2D" parent="." unique_id=2017205608]
+[node name="AudioStreamArmor" type="AudioStreamPlayer" parent="." unique_id=1287359116]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_euxyq")

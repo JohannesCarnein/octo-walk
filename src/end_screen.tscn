@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://3cwnener6jow"]
+
+[ext_resource type="Texture2D" uid="uid://cpyrhbjndi16v" path="res://assets/sprites/end_screen.png" id="1_jxa1n"]
+[ext_resource type="Script" uid="uid://ca4txnd4a60j8" path="res://src/end_screen_controller.gd" id="1_otago"]
+[ext_resource type="AudioStream" uid="uid://o6ytbqn6pcnb" path="res://assets/music/END OF GAME.ogg" id="2_8qr8r"]
+
+[node name="Control" type="Control" unique_id=1888228404]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_otago")
+music = ExtResource("2_8qr8r")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=545520752]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_jxa1n")
