@@ -23,3 +23,13 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("1_jxa1n")
+
+[node name="LabelPressAnyKey" type="Label" parent="." unique_id=764007872]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 19.0
+offset_top = 1019.0
+offset_right = 435.0
+offset_bottom = 1064.0
+theme_override_font_sizes/font_size = 32
+text = "[Press any key to continue]"
