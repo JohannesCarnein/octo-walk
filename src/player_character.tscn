@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bgdaf70riwapg"]
 
-[ext_resource type="Texture2D" uid="uid://djyj640rv5ikr" path="res://assets/octopus.png" id="1_1i3gq"]
+[ext_resource type="Texture2D" uid="uid://djyj640rv5ikr" path="res://assets/sprites/octopus.png" id="1_1i3gq"]
 [ext_resource type="Shader" uid="uid://djjpys0avd2s5" path="res://shader/tentacle.gdshader" id="2_4sjkn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4sjkn"]

@@ -8,7 +8,6 @@ func _ready() -> void:
 
 func _wait_and_play_athmo_sound() -> void:
 	var wait_time := randf_range(_min_wait_time, _max_wait_time)
-	print("Waiting %s for next playback" % wait_time)
 	await get_tree().create_timer(wait_time).timeout
 	play()
 	await finished

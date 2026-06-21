@@ -21,9 +21,6 @@ var _time_under_tension: float = 0:
 	set(value):
 		_time_under_tension = clamp(value, 0, time_till_max_strength)
 
-func _ready() -> void:
-	pass
-	
 #func _process(delta: float) -> void:
 #	queue_redraw()
 	
@@ -115,9 +112,6 @@ func jump() -> void:
 		jump_tween2 = null
 		jump()
 
-func play_anim(anim_name: String) -> void:
-	#%AnimationPlayer.play(anim_name)
-	pass
 
 func Lstep_left(strength: float) -> void:
 	%FootLTarget.approach_target(%StepTargetL, strength)
