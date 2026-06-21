@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b8g8obirqm7xt"]
+
+[ext_resource type="Script" uid="uid://c6r525peim8md" path="res://src/main.gd" id="1_eewff"]
+[ext_resource type="PackedScene" uid="uid://cd60dntftpmxv" path="res://src/opening_cutscene.tscn" id="2_3cfgd"]
+[ext_resource type="PackedScene" uid="uid://0y0opptba3ab" path="res://src/title_screen.tscn" id="3_fyndt"]
+[ext_resource type="PackedScene" uid="uid://cqr6mo2eyup7k" path="res://src/stages/main.tscn" id="4_kmhfv"]
+[ext_resource type="PackedScene" uid="uid://3cwnener6jow" path="res://src/end_screen.tscn" id="5_fyndt"]
+
+[node name="Main" type="Node" unique_id=1723570763]
+script = ExtResource("1_eewff")
+cutscene = ExtResource("2_3cfgd")
+menu = ExtResource("3_fyndt")
+game = ExtResource("4_kmhfv")
+end_screen = ExtResource("5_fyndt")
+
+[node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="." unique_id=1416990102]
+unique_name_in_owner = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1728222566]
+unique_name_in_owner = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=651062802]
+
+[node name="ScreenFade" type="ColorRect" parent="CanvasLayer" unique_id=716424249]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
