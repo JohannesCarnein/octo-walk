@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dfdlhxt27ex2b"
+path="res://.godot/imported/End of 3rd Level.ogg-483f20b16a39ef79a06743e583012f11.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/End of 3rd Level.ogg"
+dest_files=["res://.godot/imported/End of 3rd Level.ogg-483f20b16a39ef79a06743e583012f11.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

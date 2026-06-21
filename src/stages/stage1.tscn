@@ -2,9 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://cedd8l6bfnxxo" path="res://assets/sprites/ground-spritesheet.png" id="1_8co7y"]
 [ext_resource type="Script" uid="uid://bmfpirb8kcg0o" path="res://src/stages/stage_controller.gd" id="1_g6k2j"]
+[ext_resource type="AudioStream" uid="uid://bqaeqy4ptxcsr" path="res://assets/music/Loop 1st Level.ogg" id="2_rcjq6"]
+[ext_resource type="AudioStream" uid="uid://c7sluyraox1pk" path="res://assets/music/End of 1st Level.ogg" id="3_le2c3"]
 
 [node name="Stage1" type="Node2D" unique_id=708795216]
 script = ExtResource("1_g6k2j")
+music = ExtResource("2_rcjq6")
+moses_music = ExtResource("3_le2c3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1194879427]
 texture = ExtResource("1_8co7y")

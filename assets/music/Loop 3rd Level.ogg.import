@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dakjf6k57t8qa"
+path="res://.godot/imported/Loop 3rd Level.ogg-019c1a6e6d122cc30f863df8a29aadf4.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Loop 3rd Level.ogg"
+dest_files=["res://.godot/imported/Loop 3rd Level.ogg-019c1a6e6d122cc30f863df8a29aadf4.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

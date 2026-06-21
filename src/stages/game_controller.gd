@@ -7,6 +7,7 @@ signal finished
 @onready var moses: MosesController = %Moses
 
 @onready var moses_camera: PhantomCamera2D = %CameraMoses
+@onready var moses_screen_notifier: VisibleOnScreenNotifier2D = %VisibleOnScreenNotifier2D
 
 var _current_stage: StageController
 
@@ -46,4 +47,5 @@ func _start_stage(stage: StageController) -> void:
 		moses.global_position.x = stage.get_global_moses_position_x()
 	_current_stage = stage
 	_current_stage.initialize(player)
-	_current_stage.start() # TODO only do this when the player does some input
+	await get_tree().create_timer(2.0).timeout
+	_current_stage.start(moses_screen_notifier) # TODO only do this when the player does some input

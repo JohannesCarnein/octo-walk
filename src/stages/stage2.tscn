@@ -2,8 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://08ygld83vt76" path="res://src/stages/stage1.tscn" id="1_k3sfh"]
 [ext_resource type="Texture2D" uid="uid://f18hm5qdokxs" path="res://assets/sprites/earth-obstacles-spritesheet.png" id="2_b55l6"]
+[ext_resource type="AudioStream" uid="uid://dtou1c2arahm3" path="res://assets/music/Loop 2nd Level.ogg" id="2_tj3ta"]
+[ext_resource type="AudioStream" uid="uid://den67gv4pammx" path="res://assets/music/End of 2nd Level.ogg" id="3_jk1t2"]
 
 [node name="Stage2" unique_id=708795216 instance=ExtResource("1_k3sfh")]
+music = ExtResource("2_tj3ta")
+moses_music = ExtResource("3_jk1t2")
 
 [node name="Obstacles" type="Node2D" parent="." index="0" unique_id=2054147802]
 

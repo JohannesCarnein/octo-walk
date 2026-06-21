@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c7sluyraox1pk"
+path="res://.godot/imported/End of 1st Level.ogg-c30f877af7c3e0fcb676366912ec9407.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/End of 1st Level.ogg"
+dest_files=["res://.godot/imported/End of 1st Level.ogg-c30f877af7c3e0fcb676366912ec9407.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

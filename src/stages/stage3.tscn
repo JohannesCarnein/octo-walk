@@ -2,8 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://08ygld83vt76" path="res://src/stages/stage1.tscn" id="1_lwg0y"]
 [ext_resource type="Script" uid="uid://67onwqbayho6" path="res://src/weapon_spawner.gd" id="2_god4k"]
+[ext_resource type="AudioStream" uid="uid://dakjf6k57t8qa" path="res://assets/music/Loop 3rd Level.ogg" id="2_mulxa"]
+[ext_resource type="AudioStream" uid="uid://dfdlhxt27ex2b" path="res://assets/music/End of 3rd Level.ogg" id="3_4yfo7"]
 
 [node name="Stage3" unique_id=708795216 instance=ExtResource("1_lwg0y")]
+music = ExtResource("2_mulxa")
+moses_music = ExtResource("3_4yfo7")
 
 [node name="WeaponSpawner" type="Node2D" parent="." index="4" unique_id=1634482474]
 position = Vector2(369, -839)
