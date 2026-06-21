@@ -138,7 +138,7 @@ script = ExtResource("3_ym8rp")
 rotation_stiffness = 50000.0
 rotation_damping = 300.0
 mass = 0.1
-position_stiffness = 1.0
+position_damping = 0.2
 metadata/_custom_type_script = "uid://bqj3bqscufuvx"
 
 [node name="B_Leg1L" type="Bone2D" parent="ActiveRagdoll/SkeletonHolder/Skeleton2D/B_Root" unique_id=83520889]

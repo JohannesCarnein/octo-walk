@@ -3,7 +3,7 @@ extends Bone2D
 
 @export var shape_override: Shape2D
 @export var rotation_stiffness: float = 90000.0
-@export var rotation_damping: float = 50.0
+@export var rotation_damping: float = 70.0
 @export var stiffness_mult: float = 1
 @export var mass: float = 0.3
 
@@ -32,7 +32,7 @@ func get_shape() -> Shape2D:
 func get_default_shape() -> CapsuleShape2D:
 	var shape := CapsuleShape2D.new()
 	shape.radius = get_length()/7
-	shape.height = get_length() - 10
+	shape.height = get_length() - 3
 	return shape
 	
 func get_tail_pos() -> Vector2:
