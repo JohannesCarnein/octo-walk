@@ -47,7 +47,7 @@ func _physics_process(delta: float) -> void:
 		_time_under_tension -= delta * 3
 	var center_of_mass: Vector2 = %ActiveRagdoll.get_center_of_mass()
 	var skeleton_pos: Vector2 = %SkeletonHolder.global_position
-	var character_move: Vector2 = lerp(skeleton_pos, center_of_mass + Vector2.UP * 150 * jump_boost, clamp(willingness_to_move_right * delta, 0, 1))
+	var character_move: Vector2 = lerp(skeleton_pos, center_of_mass + Vector2.UP * 150 * jump_boost, clamp((willingness_to_move_right + get_mapped_tut() * 5) * delta, 0, 1))
 	%SkeletonHolder.global_position = character_move + (jump_boost - 1) * Vector2(10,5)
 	if cam:
 		cam.global_position = center_of_mass
@@ -108,13 +108,17 @@ func play_anim(anim_name: String) -> void:
 
 func Lstep_left(strength: float) -> void:
 	%FootLTarget.approach_target(%StepTargetL, strength)
+	%B_FootL.global_rotation = deg_to_rad(-90)
 	
 func Lstep_right(strength: float) -> void:
 	%FootLTarget.approach_target(%StepTargetR, strength)
+	%B_FootL.global_rotation = deg_to_rad(-90)
 	
 func Rstep_left(strength: float) -> void:
 	%FootRTarget.approach_target(%StepTargetL, strength)
+	%B_FootL.global_rotation = deg_to_rad(-90)
 	
 func Rstep_right(strength: float) -> void:
 	%FootRTarget.approach_target(%StepTargetR, strength)
+	%B_FootL.global_rotation = deg_to_rad(90)
 	

@@ -61,7 +61,11 @@ func handle_collision(impact_strength: float) -> void:
 
 func _connect_bodies(parent_body: ActiveRigidBody, child_body: ActiveRigidBody) -> void:
 	var joint := RapierPinJoint2D.new()
-	#joint.motor_position_damping = 1
+	if child_body.angula_limit_lower:
+		if child_body.angula_limit_upper:
+			joint.angular_limit_enabled = true
+			joint.angular_limit_lower = child_body.angula_limit_lower
+			joint.angular_limit_upper = child_body.angula_limit_upper
 	parent_body.add_child(joint)
 	joint.global_position = child_body.bone.global_position
 	joint.node_a = parent_body.get_path()
