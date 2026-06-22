@@ -1,14 +1,34 @@
 [gd_scene format=3 uid="uid://cx6pnel61rihc"]
 
 [ext_resource type="PackedScene" uid="uid://08ygld83vt76" path="res://src/stages/stage1.tscn" id="1_lwg0y"]
+[ext_resource type="Script" uid="uid://vkmlo2u7rrtx" path="res://src/stages/stage_3_controller.gd" id="2_4yfo7"]
 [ext_resource type="Script" uid="uid://67onwqbayho6" path="res://src/weapon_spawner.gd" id="2_god4k"]
 [ext_resource type="AudioStream" uid="uid://dakjf6k57t8qa" path="res://assets/music/Loop 3rd Level.ogg" id="2_mulxa"]
 [ext_resource type="AudioStream" uid="uid://dfdlhxt27ex2b" path="res://assets/music/End of 3rd Level.ogg" id="3_4yfo7"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5l720"]
+size = Vector2(67, 2167)
+
 [node name="Stage3" unique_id=708795216 instance=ExtResource("1_lwg0y")]
+script = ExtResource("2_4yfo7")
 music = ExtResource("2_mulxa")
 moses_music = ExtResource("3_4yfo7")
 
 [node name="WeaponSpawner" type="Node2D" parent="." index="4" unique_id=1634482474]
-position = Vector2(369, -839)
+unique_name_in_owner = true
+position = Vector2(2558, -335)
 script = ExtResource("2_god4k")
+min_weapon_spawn_time_s = 5.0
+max_weapon_spawn_time_s = 8.0
+spawn_area_height = 253.0
+
+[node name="WeaponDespawnArea" type="Area2D" parent="WeaponSpawner" index="0" unique_id=1038686356]
+unique_name_in_owner = true
+position = Vector2(-3973, -67)
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponSpawner/WeaponDespawnArea" index="0" unique_id=735766996]
+position = Vector2(5.5, 13.5)
+shape = SubResource("RectangleShape2D_5l720")

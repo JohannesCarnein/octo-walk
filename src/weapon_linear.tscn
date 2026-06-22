@@ -7,7 +7,9 @@
 radius = 64.86
 
 [node name="WeaponLinear" type="Node2D" unique_id=1908830325 node_paths=PackedStringArray("_variations")]
+scale = Vector2(0.294, 0.294)
 script = ExtResource("1_tw67v")
+speed = 500.0
 _variations = [NodePath("Variation1"), NodePath("Variation2"), NodePath("Variation3"), NodePath("Variation4")]
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1451330496]

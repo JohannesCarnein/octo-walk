@@ -15,10 +15,9 @@ func _ready() -> void:
 	hitbox.area_entered.connect(_on_area_entered)
 
 
-func shoot_at_target(global_target_position: Vector2) -> void:
-	rotation = Vector2.UP.angle_to_point(global_target_position)
-	velocity = Vector2.UP * speed
-
+func shoot_direction(direction: Vector2) -> void:
+	rotation = Vector2.UP.angle_to(direction)
+	velocity = direction.normalized() * speed
 
 func _process(delta: float) -> void:
 	position += velocity * delta
@@ -27,7 +26,5 @@ func _process(delta: float) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if area is PlayerArea:
 		print("TODO apply impulse")
-	else:
-		printt("Weapon entered area", area)
 	queue_free()
 	# TODO
